@@ -1,0 +1,1067 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head><body>
+<title>Caderno de Português B3</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:wght@500;700;800&family=Golos+Text:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a study notebook. Sticky header with language switch + tab strip; one reading column (~900px). */
+:root{
+  --bg:#f5f6f0; --surface:#ffffff; --surface-2:#eef1e9; --ink:#1b2520; --muted:#56635b; --line:#d8ded3;
+  --accent:#1d6646; --accent-ink:#ffffff; --accent-soft:#dcebe2;
+  --sun:#b87a0b; --sun-soft:#f6ead2;
+  --ok:#1f7a3c; --ok-bg:#e1f2e5; --bad:#ae3328; --bad-bg:#f8e3e0; --warn:#8a6100; --warn-bg:#f7edd2;
+  --f-display:"Alegreya", Georgia, "Times New Roman", serif;
+  --f-body:"Golos Text", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#111814; --surface:#18211c; --surface-2:#1f2a24; --ink:#e4ebe5; --muted:#9aa89f; --line:#2c3a32;
+  --accent:#62c394; --accent-ink:#0b1510; --accent-soft:#1f3b2d;
+  --sun:#e3b14d; --sun-soft:#3a2f17;
+  --ok:#73d395; --ok-bg:#183323; --bad:#f19184; --bad-bg:#3b1d1a; --warn:#e9c35f; --warn-bg:#352b12;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#111814; --surface:#18211c; --surface-2:#1f2a24; --ink:#e4ebe5; --muted:#9aa89f; --line:#2c3a32;
+  --accent:#62c394; --accent-ink:#0b1510; --accent-soft:#1f3b2d;
+  --sun:#e3b14d; --sun-soft:#3a2f17;
+  --ok:#73d395; --ok-bg:#183323; --bad:#f19184; --bad-bg:#3b1d1a; --warn:#e9c35f; --warn-bg:#352b12;
+  color-scheme:dark}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55}
+.wrap{max-width:900px;margin:0 auto;padding-inline:16px;padding-block:0 64px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;line-height:1.15;margin:0}
+h1{font-size:clamp(2rem,6vw,3rem);font-weight:800;letter-spacing:-.01em}
+h2{font-size:1.75rem;font-weight:700}
+h3{font-size:1.2rem;font-weight:700}
+p{margin:0}
+a{color:var(--accent)}
+.eyebrow{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.muted{color:var(--muted)}
+.pt{font-style:italic}
+header.top{padding-block:28px 16px;display:grid;gap:10px}
+header.top p{max-width:64ch;color:var(--muted)}
+.langs{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.langs button{border:1px solid var(--line);background:var(--surface);color:var(--ink);font:600 .82rem var(--f-mono);padding:5px 10px;border-radius:6px;cursor:pointer}
+.langs button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-16px;padding-inline:16px}
+.strip{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;padding-block:8px}
+.strip::-webkit-scrollbar{display:none}
+nav.tabs button{flex:0 0 auto;border:1px solid transparent;background:none;color:var(--muted);font:600 .95rem var(--f-body);padding:7px 13px;border-radius:999px;cursor:pointer}
+nav.tabs button:hover{color:var(--ink);background:var(--surface-2)}
+nav.tabs button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink)}
+button:focus-visible,input:focus-visible,select:focus-visible,.card:focus-visible,a:focus-visible{outline:2px solid var(--sun);outline-offset:2px}
+section.panel{display:grid;gap:20px;padding-top:24px}
+.lead{max-width:68ch;display:grid;gap:6px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px;display:grid;gap:12px;min-width:0}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.flag{background:var(--sun-soft);border-left:3px solid var(--sun);padding:10px 14px;border-radius:0 8px 8px 0;font-size:.93rem}
+.flag b{color:var(--sun)}
+.tr{background:var(--surface-2);border-radius:8px;padding:10px 14px;font-size:.93rem;color:var(--ink)}
+.tr .eyebrow{display:block;margin-bottom:3px}
+.src{font-size:.8rem;color:var(--muted);display:grid;gap:3px}
+.src b{font-weight:600;color:var(--ink)}
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.93rem}
+th,td{text-align:left;padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+td.v{font-family:var(--f-mono);font-size:.86rem;white-space:nowrap}
+.mini td,.mini th{padding:4px 8px}
+ul.clean,ol.clean{margin:0;padding-left:1.15em;display:grid;gap:5px}
+.kicker{font-family:var(--f-display);font-size:1.05rem;font-weight:700}
+.btn{border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);font:600 .92rem var(--f-body);padding:8px 14px;border-radius:8px;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--accent)}
+.row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);font:500 .88rem var(--f-body);padding:6px 11px;border-radius:999px;cursor:pointer}
+.chip[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.chip small{color:var(--muted)}
+.tag{font-size:.74rem;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--surface-2);color:var(--muted);white-space:nowrap}
+.tag.new{background:var(--sun-soft);color:var(--sun)}
+.tag.course{background:var(--accent-soft);color:var(--ink)}
+.bhead{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between}
+.bhead .row{gap:6px}
+.item{border-top:1px solid var(--line);padding-block:14px;display:grid;gap:8px}
+.item .q{line-height:1.95}
+.num{font-family:var(--f-mono);color:var(--muted);font-size:.85rem;margin-right:6px}
+input.gap{font:500 1rem var(--f-body);color:var(--ink);background:var(--surface-2);border:none;border-bottom:2px solid var(--line);border-radius:4px 4px 0 0;padding:2px 6px;width:9.5em;max-width:100%}
+input.gap.wide{width:12em}
+input.gap.ok{border-color:var(--ok);background:var(--ok-bg)}
+input.gap.bad{border-color:var(--bad);background:var(--bad-bg)}
+input.gap.almost{border-color:var(--warn);background:var(--warn-bg)}
+.hint{color:var(--muted);font-size:.9rem}
+.fb{font-size:.93rem;border-radius:8px;padding:8px 12px}
+.fb.ok{background:var(--ok-bg);color:var(--ok)}
+.fb.bad{background:var(--bad-bg);color:var(--bad)}
+.fb.almost{background:var(--warn-bg);color:var(--warn)}
+.fb .why{color:var(--ink);display:block;margin-top:4px}
+.opts{display:grid;gap:6px}
+.opt{text-align:left;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:500 .95rem var(--f-body);padding:9px 12px;border-radius:8px;cursor:pointer}
+.opt:hover{border-color:var(--accent)}
+.opt.ok{border-color:var(--ok);background:var(--ok-bg)}
+.opt.bad{border-color:var(--bad);background:var(--bad-bg)}
+.score{font-family:var(--f-mono);font-size:.88rem;color:var(--muted)}
+.score b{color:var(--ink)}
+.drill{display:grid;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px}
+.prompt{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline}
+.prompt .verb{font-family:var(--f-display);font-size:2rem;font-weight:800}
+.tag.t{background:var(--accent-soft);color:var(--ink);font-size:.82rem}
+.drill input{font:500 1.25rem var(--f-body);padding:10px 12px;border:1px solid var(--line);border-radius:8px;background:var(--surface-2);color:var(--ink);width:100%;max-width:360px}
+.keys{display:flex;flex-wrap:wrap;gap:4px}
+.keys button{font:500 1rem var(--f-body);min-width:36px;padding:5px 8px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink);cursor:pointer}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;min-height:210px;display:grid;place-items:center;text-align:center;padding:26px 18px;cursor:pointer;gap:8px;user-select:none}
+.card .w{font-family:var(--f-display);font-size:clamp(1.6rem,6vw,2.3rem);font-weight:700}
+.card .trs{display:grid;gap:4px;font-size:1.08rem}
+.card .trs span b{font-family:var(--f-mono);font-size:.75rem;color:var(--muted);margin-right:6px}
+.card .exs{color:var(--muted);font-style:italic;max-width:50ch}
+.bar{height:6px;background:var(--surface-2);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);width:0}
+.reading p{max-width:68ch;margin-bottom:12px;line-height:1.75}
+.g{border:none;background:none;color:inherit;font:inherit;padding:0;border-bottom:2px dotted var(--sun);cursor:pointer}
+.g .gl{display:none}
+.g.open .gl{display:inline;font-style:normal;font-size:.82em;background:var(--sun-soft);color:var(--ink);padding:1px 6px;border-radius:5px;margin-left:4px}
+details{border:1px solid var(--line);border-radius:var(--r);background:var(--surface);padding:12px 16px}
+details summary{cursor:pointer;font-weight:600}
+details[open] summary{margin-bottom:10px}
+select,input.search{font:500 .95rem var(--f-body);padding:7px 10px;border-radius:8px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink);max-width:100%}
+input.search{width:100%;max-width:360px}
+.ex{font-style:italic}
+footer{margin-top:40px;font-size:.85rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px;display:grid;gap:8px}
+#p-home table{min-width:560px}
+@media (prefers-reduced-motion:no-preference){.bar i{transition:width .3s}}
+</style>
+
+<div class="wrap">
+<header class="top">
+  <span class="eyebrow">Português B3 · USP</span>
+  <h1>Caderno B3</h1>
+  <p data-i="hero"></p>
+  <div class="langs" id="langs" role="group" aria-label="Idioma"></div>
+</header>
+<nav class="tabs" aria-label="Seções"><div class="strip" role="tablist" id="tabs"></div></nav>
+
+<section class="panel" id="p-home" hidden></section>
+<section class="panel" id="p-theory" hidden></section>
+<section class="panel" id="p-ex" hidden></section>
+<section class="panel" id="p-dict" hidden></section>
+<section class="panel" id="p-cards" hidden></section>
+<section class="panel" id="p-plan" hidden></section>
+
+<footer>
+  <span data-i="footer"></span>
+  <span class="row"><span data-i="saved"></span><button class="chip" id="resetAll" data-i="reset" type="button"></button></span>
+</footer>
+</div>
+
+<script>
+(function(){
+"use strict";
+var store={get:function(k,d){try{var v=localStorage.getItem("b3v2:"+k);return v==null?d:JSON.parse(v)}catch(e){return d}},set:function(k,v){try{localStorage.setItem("b3v2:"+k,JSON.stringify(v))}catch(e){}}};
+function $(s,r){return (r||document).querySelector(s)}
+function el(tag,attrs,html){var e=document.createElement(tag);if(attrs)for(var k in attrs){if(k==="class")e.className=attrs[k];else if(k==="text")e.textContent=attrs[k];else e.setAttribute(k,attrs[k])}if(html!=null)e.innerHTML=html;return e}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t}return a}
+function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
+function norm(s){return String(s).toLowerCase().replace(/[.!?,;:]/g,"").replace(/\s+/g," ").trim()}
+function bare(s){return norm(s).normalize("NFD").replace(/[̀-ͯ]/g,"")}
+function judge(input,alts){var n=norm(input);if(!n)return "empty";for(var i=0;i<alts.length;i++)if(norm(alts[i])===n)return "ok";for(var j=0;j<alts.length;j++)if(bare(alts[j])===bare(n))return "almost";return "bad"}
+
+/* =================== LANGUAGES =================== */
+var LANGS=["pt","en","fr","es","ru"];
+var LNAME={pt:"PT",en:"EN",fr:"FR",es:"ES",ru:"RU"};
+var lang=store.get("lang","pt");if(LANGS.indexOf(lang)<0)lang="pt";
+// UI strings. Portuguese is the main language.
+var T={
+nav_home:{pt:"Início",en:"Home",fr:"Accueil",es:"Inicio",ru:"Главная"},
+nav_theory:{pt:"Teoria",en:"Theory",fr:"Théorie",es:"Teoría",ru:"Теория"},
+nav_ex:{pt:"Exercícios",en:"Exercises",fr:"Exercices",es:"Ejercicios",ru:"Упражнения"},
+nav_dict:{pt:"Dicionário",en:"Dictionary",fr:"Dictionnaire",es:"Diccionario",ru:"Словарь"},
+nav_cards:{pt:"Cartões",en:"Flashcards",fr:"Cartes",es:"Tarjetas",ru:"Карточки"},
+nav_plan:{pt:"Plano de estudo",en:"Study plan",fr:"Plan d'étude",es:"Plan de estudio",ru:"План"},
+hero:{pt:"Material de estudo da turma B3: teoria, exercícios com correção automática, dicionário e cartões. Base: os materiais compartilhados no curso.",en:"Study kit for the B3 class: theory, self-checking exercises, a dictionary and flashcards. Built on the materials shared in the course.",fr:"Kit d'étude pour la classe B3 : théorie, exercices autocorrigés, dictionnaire et cartes. Basé sur les supports partagés en cours.",es:"Material de estudio para el grupo B3: teoría, ejercicios con corrección automática, diccionario y tarjetas. Basado en los materiales compartidos en el curso.",ru:"Материалы для группы B3: теория, упражнения с автопроверкой, словарь и карточки. Основа — материалы, которыми поделились на курсе."},
+home_title:{pt:"O que há nos materiais do curso",en:"What the course materials cover",fr:"Ce que couvrent les supports du cours",es:"Qué cubren los materiales del curso",ru:"Что есть в материалах курса"},
+th_file:{pt:"Arquivo",en:"File",fr:"Fichier",es:"Archivo",ru:"Файл"},
+th_topic:{pt:"Tema",en:"Topic",fr:"Thème",es:"Tema",ru:"Тема"},
+th_where:{pt:"Onde praticar",en:"Where to practise",fr:"Où s'entraîner",es:"Dónde practicar",ru:"Где тренировать"},
+note_lbl:{pt:"Atenção.",en:"Note.",fr:"À noter.",es:"Atención.",ru:"Важно."},
+note:{pt:"Foram acrescentados: as chaves de resposta (os materiais não têm gabarito), os exercícios marcados como «Novo», as traduções e as partes da teoria com fonte externa. Cada parte indica a sua fonte. Em caso de dúvida, confirme com os professores.",en:"Added on top of the materials: answer keys (the materials have none), exercises marked «New», translations, and theory parts from external sources. Each part names its source. If in doubt, check with the teachers.",fr:"Ajouts par rapport aux supports : les corrigés (les supports n'en ont pas), les exercices marqués « Nouveau », les traductions et les parties de théorie issues de sources externes. Chaque partie cite sa source. En cas de doute, vérifiez auprès des professeurs.",es:"Añadido a los materiales: las claves de respuesta (los materiales no las tienen), los ejercicios marcados como «Nuevo», las traducciones y las partes de teoría con fuente externa. Cada parte indica su fuente. Si tienes dudas, consulta con los profesores.",ru:"Добавлено к материалам: ключи ответов (в материалах их нет), упражнения с пометкой «Новое», переводы и части теории из внешних источников. У каждой части указан источник. Если сомневаетесь, уточните у преподавателей."},
+progress:{pt:"Seu progresso",en:"Your progress",fr:"Votre progression",es:"Tu progreso",ru:"Ваш прогресс"},
+progress_empty:{pt:"Ainda vazio. Os resultados ficam salvos neste navegador.",en:"Nothing yet. Results are saved in this browser.",fr:"Rien pour l'instant. Les résultats sont enregistrés dans ce navigateur.",es:"Todavía vacío. Los resultados se guardan en este navegador.",ru:"Пока пусто. Результаты сохраняются в этом браузере."},
+start:{pt:"Por onde começar",en:"Where to start",fr:"Par où commencer",es:"Por dónde empezar",ru:"С чего начать"},
+start1:{pt:"Leia o tema «Perfeito × Imperfeito» na Teoria.",en:"Read the «Perfeito × Imperfeito» topic in Theory.",fr:"Lisez le thème « Perfeito × Imperfeito » dans Théorie.",es:"Lee el tema «Perfeito × Imperfeito» en Teoría.",ru:"Прочитайте тему «Perfeito × Imperfeito» в Теории."},
+start2:{pt:"Faça 20 verbos em Exercícios → Conjugação.",en:"Do 20 verbs in Exercises → Conjugação.",fr:"Faites 20 verbes dans Exercices → Conjugação.",es:"Haz 20 verbos en Ejercicios → Conjugação.",ru:"Сделайте 20 глаголов в Упражнения → Conjugação."},
+start3:{pt:"Resolva o Exercício 1 do curso em «Perfeito × Imperfeito».",en:"Solve course Exercise 1 in «Perfeito × Imperfeito».",fr:"Faites l'exercice 1 du cours dans « Perfeito × Imperfeito ».",es:"Resuelve el Ejercicio 1 del curso en «Perfeito × Imperfeito».",ru:"Решите Exercício 1 из курса в разделе «Perfeito × Imperfeito»."},
+start4:{pt:"Treine os «Marcadores de tempo» nos Cartões.",en:"Practise «Marcadores de tempo» in Flashcards.",fr:"Entraînez-vous aux « Marcadores de tempo » dans Cartes.",es:"Practica los «Marcadores de tempo» en Tarjetas.",ru:"Потренируйте «Marcadores de tempo» в Карточках."},
+words_known:{pt:"Palavras que você sabe",en:"Words you know",fr:"Mots connus",es:"Palabras que sabes",ru:"Слов знаю"},
+footer:{pt:"Exercícios do curso: arquivos da turma B3 (USP, Projeto Sol Novum). Chaves, traduções e exercícios novos foram feitos à parte e podem conter erros.",en:"Course exercises: B3 class files (USP, Projeto Sol Novum). Keys, translations and new exercises were made separately and may contain errors.",fr:"Exercices du cours : fichiers de la classe B3 (USP, Projeto Sol Novum). Corrigés, traductions et nouveaux exercices ont été faits à part et peuvent contenir des erreurs.",es:"Ejercicios del curso: archivos del grupo B3 (USP, Projeto Sol Novum). Claves, traducciones y ejercicios nuevos se hicieron aparte y pueden contener errores.",ru:"Упражнения курса: файлы группы B3 (USP, Projeto Sol Novum). Ключи, переводы и новые упражнения сделаны отдельно и могут содержать ошибки."},
+saved:{pt:"O progresso fica salvo só neste navegador.",en:"Progress is saved in this browser only.",fr:"La progression est enregistrée dans ce navigateur uniquement.",es:"El progreso se guarda solo en este navegador.",ru:"Прогресс хранится только в этом браузере."},
+reset:{pt:"Apagar progresso",en:"Reset progress",fr:"Effacer la progression",es:"Borrar progreso",ru:"Сбросить прогресс"},
+theory_intro:{pt:"Teoria por temas. Base: materiais do curso, completados com fontes externas conferidas e indicadas em cada tema.",en:"Theory by topic. Based on the course materials, completed with checked external sources listed under each topic.",fr:"Théorie par thème. Basée sur les supports du cours, complétée par des sources externes vérifiées, citées à chaque thème.",es:"Teoría por temas. Basada en los materiales del curso y completada con fuentes externas verificadas, indicadas en cada tema.",ru:"Теория по темам. Основа — материалы курса, дополненные проверенными внешними источниками; они указаны в каждой теме."},
+src_course:{pt:"Materiais do curso:",en:"Course materials:",fr:"Supports du cours :",es:"Materiales del curso:",ru:"Материалы курса:"},
+src_ext:{pt:"Fontes externas:",en:"External sources:",fr:"Sources externes :",es:"Fuentes externas:",ru:"Внешние источники:"},
+translation:{pt:"Tradução",en:"English",fr:"Français",es:"Español",ru:"Русский"},
+search:{pt:"Buscar…",en:"Search…",fr:"Rechercher…",es:"Buscar…",ru:"Поиск…"},
+ex_intro:{pt:"Exercícios do curso e exercícios novos, com correção automática. Erro só de acento conta como «quase».",en:"Course exercises and new ones, checked automatically. An accent-only mistake counts as «almost».",fr:"Exercices du cours et nouveaux exercices, corrigés automatiquement. Une erreur d'accent seule compte comme « presque ».",es:"Ejercicios del curso y nuevos, con corrección automática. Un error solo de tilde cuenta como «casi».",ru:"Упражнения из курса и новые, с автопроверкой. Ошибка только в диакритике засчитывается как «почти»."},
+course:{pt:"Do curso",en:"From the course",fr:"Du cours",es:"Del curso",ru:"Из курса"},
+newt:{pt:"Novo",en:"New",fr:"Nouveau",es:"Nuevo",ru:"Новое"},
+check:{pt:"Verificar",en:"Check",fr:"Vérifier",es:"Comprobar",ru:"Проверить"},
+next:{pt:"Próximo →",en:"Next →",fr:"Suivant →",es:"Siguiente →",ru:"Дальше →"},
+show:{pt:"Mostrar resposta",en:"Show answer",fr:"Voir la réponse",es:"Ver respuesta",ru:"Показать ответ"},
+correct:{pt:"Correto.",en:"Correct.",fr:"Correct.",es:"Correcto.",ru:"Верно."},
+almost:{pt:"Quase: confira os acentos.",en:"Almost: check the accents.",fr:"Presque : vérifiez les accents.",es:"Casi: revisa las tildes.",ru:"Почти: проверьте диакритику."},
+answer:{pt:"Resposta:",en:"Answer:",fr:"Réponse :",es:"Respuesta:",ru:"Ответ:"},
+rightopt:{pt:"Opção correta:",en:"Correct option:",fr:"Bonne réponse :",es:"Opción correcta:",ru:"Правильный вариант:"},
+redo:{pt:"Fazer de novo",en:"Try again",fr:"Recommencer",es:"Repetir",ru:"Пройти заново"},
+disputed:{pt:"discutível",en:"debatable",fr:"discutable",es:"discutible",ru:"спорно"},
+key_ours:{pt:"chave nossa",en:"key by us",fr:"corrigé de notre part",es:"clave nuestra",ru:"ключ наш"},
+drill_intro:{pt:"Escolha um conjunto, digite a forma e aperte Enter.",en:"Pick a set, type the form and press Enter.",fr:"Choisissez une série, tapez la forme et appuyez sur Entrée.",es:"Elige un conjunto, escribe la forma y pulsa Enter.",ru:"Выберите набор, введите форму и нажмите Enter."},
+tuvos:{pt:"Incluir tu e vós",en:"Include tu and vós",fr:"Inclure tu et vós",es:"Incluir tu y vós",ru:"Включить tu и vós"},
+tuvos_hint:{pt:"No Brasil usa-se mais você/vocês; as tabelas do curso trazem as 6 pessoas.",en:"Brazil mostly uses você/vocês; the course tables give all 6 persons.",fr:"Au Brésil on utilise surtout você/vocês ; les tableaux du cours donnent les 6 personnes.",es:"En Brasil se usa más você/vocês; las tablas del curso tienen las 6 personas.",ru:"В Бразилии чаще говорят você/vocês; в таблицах курса есть все 6 лиц."},
+hits:{pt:"acertos",en:"correct",fr:"bonnes réponses",es:"aciertos",ru:"верно"},
+dict_intro:{pt:"Todas as palavras do curso, com tradução. Busque em português ou na sua língua.",en:"All course vocabulary with translations. Search in Portuguese or your language.",fr:"Tout le vocabulaire du cours, traduit. Cherchez en portugais ou dans votre langue.",es:"Todo el vocabulario del curso, con traducción. Busca en portugués o en tu idioma.",ru:"Вся лексика курса с переводом. Ищите на португальском или на своём языке."},
+all:{pt:"Todas",en:"All",fr:"Toutes",es:"Todas",ru:"Все"},
+th_pt:{pt:"Português",en:"Portuguese",fr:"Portugais",es:"Portugués",ru:"Португальский"},
+th_ex:{pt:"Exemplo do curso",en:"Course example",fr:"Exemple du cours",es:"Ejemplo del curso",ru:"Пример из курса"},
+tr_ours:{pt:"Traduções nossas, conforme o sentido no curso.",en:"Translations by us, matching the meaning used in the course.",fr:"Traductions de notre part, selon le sens dans le cours.",es:"Traducciones nuestras, según el sentido en el curso.",ru:"Переводы наши, по смыслу в курсе."},
+cards_intro:{pt:"Treine o vocabulário: vire o cartão ou faça o teste de múltipla escolha.",en:"Train vocabulary: flip the cards or take the multiple-choice quiz.",fr:"Entraînez le vocabulaire : retournez les cartes ou faites le quiz.",es:"Entrena el vocabulario: gira las tarjetas o haz el test.",ru:"Тренируйте слова: переворачивайте карточки или проходите тест."},
+mode_cards:{pt:"Cartões",en:"Cards",fr:"Cartes",es:"Tarjetas",ru:"Карточки"},
+mode_quiz:{pt:"Teste",en:"Quiz",fr:"Quiz",es:"Test",ru:"Тест"},
+reverse:{pt:"Ao contrário",en:"Reverse",fr:"Inverser",es:"Al revés",ru:"Наоборот"},
+flip:{pt:"toque para virar",en:"tap to flip",fr:"touchez pour retourner",es:"toca para girar",ru:"нажмите, чтобы перевернуть"},
+know:{pt:"Sei",en:"I know it",fr:"Je sais",es:"Lo sé",ru:"Знаю"},
+dont:{pt:"Ainda não sei",en:"Not yet",fr:"Pas encore",es:"Todavía no",ru:"Ещё не знаю"},
+done:{pt:"Rodada concluída.",en:"Round complete.",fr:"Tour terminé.",es:"Ronda terminada.",ru:"Круг пройден."},
+again:{pt:"Mais uma rodada",en:"Another round",fr:"Encore un tour",es:"Otra ronda",ru:"Ещё круг"},
+quiz_pt_note:{pt:"No modo PT, o teste usa a tradução em inglês.",en:"",fr:"",es:"",ru:""},
+read_intro:{pt:"Toque numa palavra sublinhada para ver a tradução.",en:"Tap an underlined word to see its translation.",fr:"Touchez un mot souligné pour voir la traduction.",es:"Toca una palabra subrayada para ver la traducción.",ru:"Нажмите на подчёркнутое слово, чтобы увидеть перевод."},
+words_task:{pt:"Tarefa do curso: explique cada palavra com suas palavras e crie uma frase. Tente primeiro, depois abra a sugestão (definições nossas).",en:"Course task: explain each word in your own words and write a sentence. Try first, then open the suggestion (our definitions).",fr:"Consigne du cours : expliquez chaque mot avec vos mots et écrivez une phrase. Essayez d'abord, puis ouvrez la suggestion (nos définitions).",es:"Tarea del curso: explica cada palabra con tus palabras y escribe una frase. Inténtalo primero y luego abre la sugerencia (definiciones nuestras).",ru:"Задание курса: объясните каждое слово своими словами и составьте предложение. Сначала попробуйте сами, потом откройте подсказку (определения наши)."},
+open_intro:{pt:"Perguntas do curso. Responda por escrito e compare com os pontos do texto.",en:"Course questions. Answer in writing, then compare with the points from the text.",fr:"Questions du cours. Répondez par écrit, puis comparez avec les points du texte.",es:"Preguntas del curso. Responde por escrito y compara con los puntos del texto.",ru:"Вопросы курса. Ответьте письменно и сверьтесь с пунктами из текста."},
+model:{pt:"Exemplo de resposta (modelo nosso):",en:"Sample answer (our model):",fr:"Exemple de réponse (notre modèle) :",es:"Ejemplo de respuesta (modelo nuestro):",ru:"Пример ответа (наш образец):"},
+ficha_intro:{pt:"Tarefa da aula: preencha a ficha como se fosse um paciente. Escreva primeiro; depois compare com o modelo.",en:"Class task: fill in the form as if you were a patient. Write first, then compare with the model.",fr:"Consigne du cours : remplissez la fiche comme si vous étiez un patient. Écrivez d'abord, puis comparez avec le modèle.",es:"Tarea de la clase: rellena la ficha como si fueras un paciente. Escribe primero y luego compara con el modelo.",ru:"Задание урока: заполните карточку от лица пациента. Сначала напишите сами, потом сравните с образцом."},
+mention:{pt:"O que mencionar (do texto):",en:"What to mention (from the text):",fr:"Ce qu'il faut mentionner (d'après le texte) :",es:"Qué mencionar (del texto):",ru:"Что упомянуть (из текста):"},
+intext:{pt:"No texto:",en:"In the text:",fr:"Dans le texte :",es:"En el texto:",ru:"В тексте:"},
+match:{pt:"Faça a correspondência:",en:"Match the halves:",fr:"Associez :",es:"Relaciona:",ru:"Сопоставьте:"},
+match_ans:{pt:"Correto: ",en:"Correct: ",fr:"Correct : ",es:"Correcto: ",ru:"Правильно: "},
+plan_intro:{pt:"Análise dos materiais e sugestões para a turma.",en:"Analysis of the materials and suggestions for the class.",fr:"Analyse des supports et suggestions pour la classe.",es:"Análisis de los materiales y sugerencias para el grupo.",ru:"Анализ материалов и предложения для группы."}
+};
+function t(k){var v=T[k];return v?(v[lang]||v.pt):k}
+
+/* =================== VERB DATA =================== */
+var PERS=["eu","tu","ele / ela / você","nós","vós","eles / elas / vocês"];
+var P4=["eu","ele / ela / você","nós","eles / elas / vocês"];
+// 35 irregular verbs (Tabela de Verbos Irregulares no Pretérito Perfeito.pdf)
+var IRR=[["caber","coube coubeste coube coubemos coubestes couberam"],["compor","compus compuseste compôs compusemos compusestes compuseram"],["conter","contive contiveste conteve contivemos contivestes contiveram"],["dar","dei deste deu demos destes deram"],["desfazer","desfiz desfizeste desfez desfizemos desfizestes desfizeram"],["dispor","dispus dispuseste dispôs dispusemos dispusestes dispuseram"],["dizer","disse disseste disse dissemos dissestes disseram"],["entreter","entretive entretiveste entreteve entretivemos entretivestes entretiveram"],["estar","estive estiveste esteve estivemos estivestes estiveram"],["expor","expus expuseste expôs expusemos expusestes expuseram"],["fazer","fiz fizeste fez fizemos fizestes fizeram"],["haver","houve houveste houve houvemos houvestes houveram"],["impor","impus impuseste impôs impusemos impusestes impuseram"],["intervir","intervim intervieste interveio interviemos interviestes intervieram"],["ir","fui foste foi fomos fostes foram"],["manter","mantive mantiveste manteve mantivemos mantivestes mantiveram"],["obter","obtive obtiveste obteve obtivemos obtivestes obtiveram"],["opor","opus opuseste opôs opusemos opusestes opuseram"],["poder","pude pudeste pôde pudemos pudestes puderam"],["pôr","pus puseste pôs pusemos pusestes puseram"],["pressupor","pressupus pressupuseste pressupôs pressupusemos pressupusestes pressupuseram"],["prever","previ previste previu previmos previstes previram"],["propor","propus propuseste propôs propusemos propusestes propuseram"],["querer","quis quiseste quis quisemos quisestes quiseram"],["refazer","refiz refizeste refez refizemos refizestes refizeram"],["repor","repus repuseste repôs repusemos repusestes repuseram"],["rever","revi reviste reviu revimos revistes reviram"],["saber","soube soubeste soube soubemos soubestes souberam"],["satisfazer","satisfiz satisfizeste satisfez satisfizemos satisfizestes satisfizeram"],["ser","fui foste foi fomos fostes foram"],["supor","supus supuseste supôs supusemos supusestes supuseram"],["ter","tive tiveste teve tivemos tivestes tiveram"],["trazer","trouxe trouxeste trouxe trouxemos trouxestes trouxeram"],["ver","vi viste viu vimos vistes viram"],["vir","vim vieste veio viemos viestes vieram"]].map(function(r){return{inf:r[0],f:r[1].split(" ")}});
+// Imperfeito irregulars (Pretéritos - Irregulares.pdf; MIT OCW 21G.801). Slide prints "tinheis/vinheis"; both spellings accepted.
+var IMP=[{inf:"ser",f:["era","eras","era","éramos","éreis","eram"]},{inf:"ter",f:["tinha","tinhas","tinha","tínhamos","tínheis","tinham"],alt:{4:["tinheis"]}},{inf:"vir",f:["vinha","vinhas","vinha","vínhamos","vínheis","vinham"],alt:{4:["vinheis"]}},{inf:"pôr",f:["punha","punhas","punha","púnhamos","púnheis","punham"]}];
+// 15 verbs (Tabela_Conjugacao_Verbos_Destaque.pdf): PP and Presente for eu / ele-você / nós / eles-vocês
+var V15=[["fazer","fiz fez fizemos fizeram","faço faz fazemos fazem","fazia"],["assistir","assisti assistiu assistimos assistiram","assisto assiste assistimos assistem","assistia"],["ser","fui foi fomos foram","sou é somos são","era|era|éramos|eram"],["ter","tive teve tivemos tiveram","tenho tem temos têm","tinha|tinha|tínhamos|tinham"],["falar","falei falou falamos falaram","falo fala falamos falam","falava"],["comer","comi comeu comemos comeram","como come comemos comem","comia"],["trabalhar","trabalhei trabalhou trabalhamos trabalharam","trabalho trabalha trabalhamos trabalham","trabalhava"],["estudar","estudei estudou estudamos estudaram","estudo estuda estudamos estudam","estudava"],["comprar","comprei comprou compramos compraram","compro compra compramos compram","comprava"],["dormir","dormi dormiu dormimos dormiram","durmo dorme dormimos dormem","dormia"],["ler","li leu lemos leram","leio lê lemos leem","lia"],["escrever","escrevi escreveu escrevemos escreveram","escrevo escreve escrevemos escrevem","escrevia"],["dizer","disse disse dissemos disseram","digo diz dizemos dizem","dizia"],["sair","saí saiu saímos saíram","saio sai saímos saem","saía|saía|saíamos|saíam"],["viajar","viajei viajou viajamos viajaram","viajo viaja viajamos viajam","viajava"]].map(function(r){
+  var imp;if(r[3].indexOf("|")>=0)imp=r[3].split("|");else{var s=r[3];if(/ava$/.test(s)){var a=s.slice(0,-3);imp=[s,s,a+"ávamos",a+"avam"]}else{var b=s.slice(0,-2);imp=[s,s,b+"íamos",b+"iam"]}}
+  return{inf:r[0],pp:r[1].split(" "),pr:r[2].split(" "),fut:["vou","vai","vamos","vão"].map(function(x){return x+" "+r[0]}),imp:imp}});
+
+/* =================== VOCABULARY =================== */
+// pt|en|fr|es|ru|example from the course. Translations are ours.
+var CATS=[
+{id:"hist",name:"História (texto)",src:"Atividade B3.PDF",raw:`a independência|independence|l'indépendance|la independencia|независимость|
+o quadro|painting|le tableau|el cuadro|картина|Essa cena ficou famosa por causa do quadro Independência ou Morte.
+às margens do rio|on the banks of the river|au bord du fleuve|a orillas del río|на берегу реки|Dom Pedro às margens do rio Ipiranga.
+cercado por|surrounded by|entouré de|rodeado de|окружённый|cercado por soldados
+concluir|to finish, complete|achever, terminer|concluir, terminar|завершить|A pintura foi concluída em 1888.
+o acontecimento|event|l'événement|el acontecimiento|событие|66 anos depois do acontecimento
+complexo|complex|complexe|complejo|сложный|O processo de independência foi um pouco mais complexo.
+a colônia|colony|la colonie|la colonia|колония|O Brasil foi uma colônia de Portugal.
+a família real|royal family|la famille royale|la familia real|королевская семья|
+mudar-se|to move (house)|déménager|mudarse|переехать|A família real portuguesa mudou-se para o Rio de Janeiro.
+fugir de|to flee from|fuir|huir de|бежать от|para fugir das tropas de Napoleão
+as tropas|troops|les troupes|las tropas|войска|
+permanecer|to remain, stay|rester, demeurer|permanecer|оставаться|Dom Pedro permaneceu no Brasil.
+recuperar|to regain, recover|récupérer|recuperar|вернуть себе|Portugal queria recuperar parte do controle.
+a elite|elite|l'élite|la élite|элита|Parte das elites brasileiras não queria perder a influência política.
+a vantagem|advantage|l'avantage|la ventaja|преимущество|
+conquistar|to win, achieve|conquérir, obtenir|conquistar, lograr|завоевать, добиться|
+defender|to defend, argue for|défendre|defender|отстаивать|
+a autonomia|autonomy|l'autonomie|la autonomía|самостоятельность, автономия|Esses grupos defendiam que o Brasil tivesse mais autonomia.
+tomar decisões|to make decisions|prendre des décisions|tomar decisiones|принимать решения|
+o conflito|conflict|le conflit|el conflicto|конфликт|Diante desse conflito de interesses…
+diante de|in the face of|face à|ante, frente a|перед лицом, ввиду|
+declarar|to declare|déclarer|declarar|объявить|
+reconhecer|to recognize|reconnaître|reconocer|признать|Portugal só reconheceu oficialmente a Independência em 1825.
+provocar|to cause, provoke|provoquer|provocar|вызвать|
+apoiar|to support|soutenir|apoyar|поддерживать|nem todos apoiavam o novo governo
+o governo|government|le gouvernement|el gobierno|правительство|
+a escravidão|slavery|l'esclavage|la esclavitud|рабство|A escravidão continuou existindo.
+os direitos|rights|les droits|los derechos|права|
+o marco histórico|historical milestone|le jalon historique|el hito histórico|историческая веха|O 7 de setembro é um marco importante.
+a igualdade|equality|l'égalité|la igualdad|равенство|
+a liberdade|freedom|la liberté|la libertad|свобода|
+beneficiar-se de|to benefit from|bénéficier de|beneficiarse de|получить выгоду от|quem se beneficiou dele
+ficar de fora|to be left out|être laissé de côté|quedarse fuera|остаться в стороне|…e quem ficou de fora.
+porém / no entanto|however|cependant|sin embargo|однако|
+além disso|moreover, besides|de plus|además|кроме того|
+por isso|that's why, so|c'est pourquoi|por eso|поэтому|`},
+{id:"saude",name:"Saúde e trabalho",src:"Aula Pretéritos.pdf, Exercicio_Conjugacao_Verbos.pdf",raw:`a crise alérgica|allergic reaction|la crise allergique|la crisis alérgica|приступ аллергии|Eu tive uma crise alérgica terrível durante o trabalho.
+angustiado|anxious, distressed|angoissé|angustiado|встревоженный|
+a sala de espera|waiting room|la salle d'attente|la sala de espera|зал ожидания|
+a consulta|(medical) appointment|la consultation, le rendez-vous|la consulta, la cita|приём у врача|
+marcar uma consulta|to book an appointment|prendre rendez-vous|pedir cita|записаться на приём|A Sra. Maria marcava consultas mensalmente.
+sentir tonturas|to feel dizzy|avoir des vertiges|sentir mareos|чувствовать головокружение|
+ter uma queda|to have a fall|faire une chute|sufrir una caída|упасть|
+a emergência|emergency room|les urgences|urgencias|отделение неотложной помощи|Ela foi direto para a emergência.
+a reserva|reservation, booking|la réservation|la reserva|бронь|
+ser obrigado a|to be forced to|être obligé de|verse obligado a|быть вынужденным|Fomos obrigados a procurar outro hotel.
+a empresa|company|l'entreprise|la empresa|компания|
+o chefe|boss|le patron, le chef|el jefe|начальник|
+a reunião|meeting|la réunion|la reunión|совещание|O chefe marcou uma reunião inesperada.
+convocar|to call together, summon|convoquer|convocar|созвать|
+a equipe|team|l'équipe|el equipo|команда|
+o escritório|office|le bureau|la oficina|офис|
+o relatório|report|le rapport|el informe|отчёт|
+o departamento|department|le service, le département|el departamento|отдел|
+a loja|shop, store|le magasin|la tienda|магазин|
+o estabelecimento|establishment, business|l'établissement|el establecimiento|заведение|
+pedir ajuda|to ask for help|demander de l'aide|pedir ayuda|попросить помощи|
+descansar|to rest|se reposer|descansar|отдыхать|`},
+{id:"dia",name:"Dia a dia e estudo",src:"Atividade_Projeto_SolNovum_B3.pdf, Exercicio_Conjugacao_Verbos.pdf",raw:`acordar|to wake up|se réveiller|despertarse|просыпаться|Todos os dias, eu acordo às 7h.
+os avós|grandparents|les grands-parents|los abuelos|бабушка и дедушка|
+o interior|countryside, inland|l'intérieur du pays|el interior|глубинка, внутренние районы|
+a ração|pet food|les croquettes|el pienso|корм для животных|
+os alunos de intercâmbio|exchange students|les étudiants en échange|los estudiantes de intercambio|студенты по обмену|
+a faculdade|college, university|la fac, l'université|la facultad, la universidad|вуз|
+a prova|test, exam|l'examen, le contrôle|el examen|контрольная, экзамен|
+o jantar|dinner|le dîner|la cena|ужин|
+a garrafa de vinho tinto|bottle of red wine|la bouteille de vin rouge|la botella de vino tinto|бутылка красного вина|
+a cafeteria|coffee shop|le café|la cafetería|кофейня|
+a água com gás|sparkling water|l'eau gazeuse|el agua con gas|газированная вода|
+o suco natural|fresh juice|le jus de fruits frais|el jugo natural|натуральный сок|
+emocionado|moved, touched|ému|emocionado|растроганный|
+o litoral|coast|le littoral|el litoral, la costa|побережье|
+o metrô|subway, metro|le métro|el metro|метро|
+o bolo|cake|le gâteau|el pastel, la tarta|торт|
+o sorteio|draw, raffle|le tirage au sort|el sorteo|розыгрыш|
+o celular|cell phone|le portable|el celular, el móvil|мобильный телефон|
+o jornal|newspaper|le journal|el periódico|газета|
+experimentar|to try (out)|essayer, goûter|probar|попробовать|
+pedir silêncio|to ask for silence|demander le silence|pedir silencio|попросить тишины|
+a louça|the dishes|la vaisselle|los platos, la vajilla|посуда|`},
+{id:"tempo",name:"Marcadores de tempo",src:"todos os exercícios do curso",raw:`ontem|yesterday|hier|ayer|вчера|
+ontem à noite|last night|hier soir|anoche|вчера вечером|
+na semana passada|last week|la semaine dernière|la semana pasada|на прошлой неделе|
+no mês passado|last month|le mois dernier|el mes pasado|в прошлом месяце|
+no ano passado|last year|l'année dernière|el año pasado|в прошлом году|
+certa manhã|one morning|un matin|una mañana|однажды утром|
+um dia|one day|un jour|un día|однажды|
+de repente|suddenly|soudain|de repente|вдруг|
+enquanto|while|pendant que|mientras|пока, в то время как|
+antigamente|in the old days|autrefois|antiguamente|раньше, в прежние времена|
+naquela época|at that time|à cette époque|en aquella época|в то время|
+todos os dias|every day|tous les jours|todos los días|каждый день|
+sempre|always|toujours|siempre|всегда|
+frequentemente|often|fréquemment|frecuentemente|часто|
+normalmente|usually|d'habitude|normalmente|обычно|
+atualmente|currently, nowadays|actuellement|actualmente|в настоящее время|
+hoje|today|aujourd'hui|hoy|сегодня|
+amanhã|tomorrow|demain|mañana|завтра|
+no próximo fim de semana|next weekend|le week-end prochain|el próximo fin de semana|в следующие выходные|
+mês que vem|next month|le mois prochain|el mes que viene|в следующем месяце|
+no ano que vem|next year|l'année prochaine|el año que viene|в следующем году|
+nas próximas férias|in the next holidays|aux prochaines vacances|en las próximas vacaciones|в следующие каникулы|
+daqui a pouco|in a little while|tout à l'heure|dentro de poco|скоро|`},
+{id:"dim",name:"Aula 1: diminutivos",src:"Aula 1.pptx",raw:`a bala / a balinha|candy|le bonbon|el caramelo|конфета|Oi, aceita uma balinha?
+o cafezinho|small coffee|le petit café|el cafecito|чашечка кофе|Vamos tomar um cafezinho?
+o minutinho|just a minute|une petite minute|un minutito|минуточка|Pode me esperar um minutinho?
+o amigão|great friend|le super pote|el amigazo|большой друг|O Juan é um amigão para mim.
+a duvidazinha|small question|une petite question|una dudita|маленький вопрос|Tenho só uma duvidazinha.
+o calorão|scorching heat|la grosse chaleur|el calorazo|жарища|Que calorão hoje!
+o livrão|huge book|le gros livre|el librote|огромная книга|Nossa, mas que livrão!
+o chapéu|hat|le chapeau|el sombrero|шляпа|
+a garrafa|bottle|la bouteille|la botella|бутылка|
+o garrafão|large bottle, jug|la bonbonne|el garrafón|большая бутыль|
+a mão|hand|la main|la mano|рука|
+o pé|foot|le pied|el pie|ступня|
+o copo|glass, cup|le verre|el vaso|стакан|
+o pão|bread|le pain|el pan|хлеб|
+o homem|man|l'homme|el hombre|мужчина|
+o trem|train|le train|el tren|поезд|
+o lobo|wolf|le loup|el lobo|волк|`},
+{id:"aulasaude",name:"Aula Saúde",src:"Aula Saúde (1).pdf",raw:`a UBS (Unidade Básica de Saúde)|basic health unit (primary care)|centre de santé de base|unidad básica de salud|поликлиника первичной помощи|Elena foi direto para a Unidade Básica de Saúde (UBS) do bairro.
+a UPA (Unidade de Pronto Atendimento)|urgent care unit (24h)|unité de soins d'urgence (24h)|unidad de atención de urgencias (24h)|пункт неотложной помощи (24 ч)|Ele deu entrada na UPA com suspeita de dengue.
+o SUS (Sistema Único de Saúde)|Brazil's public health system|le système de santé public brésilien|el sistema de salud pública de Brasil|государственная система здравоохранения Бразилии|
+o cartão do SUS|SUS health card|la carte du SUS|la tarjeta del SUS|карта пациента SUS|Ela trouxe os documentos e o cartão do SUS.
+o SAMU (192)|emergency ambulance service|le SAMU (urgences mobiles)|el servicio de ambulancias de urgencia|скорая помощь|
+a Farmácia Popular|public programme of free or cheaper medicines|programme public de médicaments gratuits ou moins chers|programa público de medicamentos gratuitos o más baratos|госпрограмма бесплатных и дешёвых лекарств|
+a receita (médica)|prescription|l'ordonnance|la receta médica|рецепт|
+dar entrada|to be admitted, to check in|être admis, s'enregistrer|ingresar, registrarse|поступить, оформиться|Ele deu entrada na UPA com suspeita de dengue.
+passar mal|to feel unwell|se sentir mal|sentirse mal|плохо себя чувствовать|Eu passava mal toda vez que tomava aquele antibiótico.
+a medicação de uso contínuo|daily long-term medication|traitement à prendre tous les jours|medicación de uso continuo|лекарство для постоянного приёма|
+fazer a triagem|to go through triage|passer au triage|pasar por el triaje|пройти первичный осмотр (триаж)|Enquanto eu fazia a triagem, o enfermeiro mediu minha pressão.
+estar de jejum|to be fasting|être à jeun|estar en ayunas|быть натощак|Eu estava de jejum desde as 22h para fazer o exame de sangue.
+o exame de sangue|blood test|la prise de sang|el análisis de sangre|анализ крови|
+medir a pressão|to take blood pressure|prendre la tension|tomar la presión|измерить давление|
+a suspeita de dengue|suspected dengue|une suspicion de dengue|sospecha de dengue|подозрение на денге|
+o antibiótico|antibiotic|l'antibiotique|el antibiótico|антибиотик|
+suspender (um remédio)|to stop taking (a medicine)|arrêter (un médicament)|suspender (un medicamento)|отменить (лекарство)|
+a enxaqueca|migraine|la migraine|la migraña|мигрень|Ela acordou com uma enxaqueca insuportável.
+exausto|exhausted|épuisé|agotado|измотанный|
+a febre|fever|la fièvre|la fiebre|температура, жар|
+o pico de febre|fever spike|un pic de fièvre|un pico de fiebre|скачок температуры|Ela teve um pico de febre na sala de espera.
+a virose|viral infection|une infection virale|una infección viral|вирусная инфекция|O médico disse que era uma virose severa.
+o atestado (médico)|doctor's note, sick note|le certificat médical|el certificado médico|медицинская справка, больничный|Ele lhe deu dois dias de atestado para repousar.
+repousar|to rest|se reposer|reposar|отдыхать, соблюдать покой|
+o remédio|medicine|le médicament|el medicamento|лекарство|
+a dose|dose|la dose|la dosis|доза|Em casa, tomou a primeira dose e descansou.
+o consultório|doctor's office|le cabinet médical|el consultorio|кабинет врача|
+o enfermeiro / a enfermeira|nurse|l'infirmier / l'infirmière|el enfermero / la enfermera|медбрат / медсестра|
+a recepção lotada|crowded reception|un accueil bondé|una recepción llena|переполненная регистратура|
+encaminhar|to refer (a patient)|orienter, adresser|derivar, remitir|направить|
+examinar|to examine|examiner|examinar|осмотреть|
+fazer efeito|to take effect|faire effet|hacer efecto|подействовать|
+fora de perigo|out of danger|hors de danger|fuera de peligro|вне опасности|
+agilizar|to speed up|accélérer|agilizar|ускорить|
+a qualquer custo|at any cost|à tout prix|a toda costa|любой ценой|
+reunir forças|to gather strength|rassembler ses forces|reunir fuerzas|собраться с силами|
+aliviado|relieved|soulagé|aliviado|с облегчением|
+o bairro|neighbourhood|le quartier|el barrio|район|`},
+{id:"semana",name:"Dias da semana",src:"Qual o plural de sexta-feira (UOL Educação, página salva)",raw:`a segunda-feira|Monday|le lundi|el lunes|понедельник|Temos reuniões marcadas para segundas-feiras.
+a terça-feira|Tuesday|le mardi|el martes|вторник|
+a quarta-feira|Wednesday|le mercredi|el miércoles|среда|
+a quinta-feira|Thursday|le jeudi|el jueves|четверг|
+a sexta-feira|Friday|le vendredi|el viernes|пятница|A reunião será na próxima sexta-feira.
+o sábado|Saturday|le samedi|el sábado|суббота|
+o domingo|Sunday|le dimanche|el domingo|воскресенье|
+toda sexta-feira (= todas as sextas-feiras)|every Friday|tous les vendredis|todos los viernes|каждую пятницу|`},
+{id:"trabalho",name:"Trabalho",src:"Mão de obra ou mão-de-obra (UOL Educação, página salva)",raw:`a mão de obra (pl. mãos de obra)|labour, workforce|la main-d'œuvre|la mano de obra|рабочая сила; стоимость работы|A empresa precisa contratar mão de obra especializada.
+a mão de obra especializada|skilled labour|la main-d'œuvre spécialisée|la mano de obra especializada|квалифицированная рабочая сила|A construção exige mão de obra especializada.
+a falta de mão de obra qualificada|shortage of qualified labour|la pénurie de main-d'œuvre qualifiée|la falta de mano de obra cualificada|нехватка квалифицированных кадров|O setor enfrenta falta de mão de obra qualificada.
+o custo|cost|le coût|el costo|стоимость, расходы|O custo da mão de obra aumentou.
+a força de trabalho|workforce|la main-d'œuvre, la population active|la fuerza de trabajo|рабочая сила|
+contratar|to hire|embaucher|contratar|нанимать|A empresa precisa contratar mão de obra especializada.`},
+{id:"verb",name:"Verbos",src:"tabelas de verbos do curso",raw:`caber|to fit|tenir (dans)|caber|помещаться|
+compor|to compose|composer|componer|составлять, сочинять|
+conter|to contain|contenir|contener|содержать|
+dar|to give|donner|dar|давать|
+desfazer|to undo|défaire|deshacer|разбирать, отменять|
+dispor|to arrange, have available|disposer|disponer|располагать|
+dizer|to say, tell|dire|decir|сказать|
+entreter|to entertain|divertir|entretener|развлекать|
+estar|to be (state, place)|être (état, lieu)|estar|быть, находиться|
+expor|to exhibit, expose|exposer|exponer|выставлять, излагать|
+fazer|to do, make|faire|hacer|делать|
+haver|there to be|y avoir|haber|иметься|
+impor|to impose|imposer|imponer|навязывать|
+intervir|to intervene|intervenir|intervenir|вмешиваться|
+ir|to go|aller|ir|идти, ехать|
+manter|to keep, maintain|maintenir|mantener|поддерживать, сохранять|
+obter|to obtain|obtenir|obtener|получать|
+opor|to oppose|opposer|oponer|противопоставлять|
+poder|can, to be able|pouvoir|poder|мочь|
+pôr|to put|mettre|poner|класть, ставить|
+pressupor|to presuppose|présupposer|presuponer|предполагать заранее|
+prever|to foresee|prévoir|prever|предвидеть|
+propor|to propose|proposer|proponer|предлагать|
+querer|to want|vouloir|querer|хотеть|
+refazer|to redo|refaire|rehacer|переделывать|
+repor|to put back, restock|remettre, réapprovisionner|reponer|восполнять|
+rever|to review, see again|revoir|revisar, volver a ver|пересматривать|
+saber|to know|savoir|saber|знать|
+satisfazer|to satisfy|satisfaire|satisfacer|удовлетворять|
+ser|to be|être|ser|быть|
+supor|to suppose|supposer|suponer|предполагать|
+ter|to have|avoir|tener|иметь|
+trazer|to bring|apporter|traer|приносить|
+ver|to see|voir|ver|видеть|
+vir|to come|venir|venir|приходить|
+assistir (a)|to watch|regarder|ver (un programa)|смотреть|
+falar|to speak|parler|hablar|говорить|
+comer|to eat|manger|comer|есть|
+trabalhar|to work|travailler|trabajar|работать|
+estudar|to study|étudier|estudiar|учиться|
+comprar|to buy|acheter|comprar|покупать|
+dormir|to sleep|dormir|dormir|спать|
+ler|to read|lire|leer|читать|
+escrever|to write|écrire|escribir|писать|
+sair|to go out, leave|sortir|salir|выходить|
+viajar|to travel|voyager|viajar|путешествовать|
+morar|to live (reside)|habiter|vivir, residir|жить, проживать|
+brincar|to play (children)|jouer|jugar|играть (о детях)|
+chegar|to arrive|arriver|llegar|прибывать|
+conversar|to chat, talk|discuter|conversar, charlar|разговаривать|
+mudar|to change; to move|changer; déménager|cambiar; mudarse|менять; переезжать|`}
+];
+var WORDS=[];
+CATS.forEach(function(c){c.w=c.raw.split("\n").map(function(line){var p=line.split("|");return{pt:p[0],en:p[1],fr:p[2],es:p[3],ru:p[4],ex:p[5]||"",cat:c.id}});WORDS=WORDS.concat(c.w)});
+function findWord(pt){for(var i=0;i<WORDS.length;i++)if(WORDS[i].pt===pt)return WORDS[i];return null}
+function gloss(w){return lang==="pt"?w.en:w[lang]}
+
+/* =================== SOURCES =================== */
+var EXT={
+tm_pres:["Toda Matéria — Presente do indicativo","https://www.todamateria.com.br/presente-do-indicativo/"],
+tm_perf:["Toda Matéria — Pretérito perfeito","https://www.todamateria.com.br/preterito-perfeito/"],
+tm_imp:["Toda Matéria — Pretérito imperfeito","https://www.todamateria.com.br/preterito-imperfeito/"],
+mit:["MIT OpenCourseWare, 21G.801 Portuguese I — Imperfeito (PDF)","https://ocw.mit.edu/courses/21g-801-portuguese-i-fall-2011/d8f91f546a4a7d3bd82d142a950e7cfc_MIT21G_801F11_Imperfeito.pdf"],
+ppedia:["Portuguesepedia — Perfeito vs Imperfeito","https://portuguesepedia.com/perfeito-vs-imperfeito/"],
+migaku:["Migaku (blog) — Portuguese future tense","https://migaku.com/blog/language-fun/portuguese-future-tense"],
+enem:["Prepara Enem — Pôde ou pode?","https://www.preparaenem.com/portugues/pode-ou-pode.htm"],
+mango:["Mango Languages — Diminutives in Brazilian Portuguese","https://www.mangolanguages.com/resources/learn/grammar/brazilian-portuguese/diminutives-what-are-they-and-how-to-form-them-in-brazilian-portuguese"],
+dicio_pai:["Dicio — Paizinho ou paisinho","https://www.dicio.com.br/paizinho-ou-paisinho/"],
+dicio_pl:["Dicio — Plural de florzinha","https://www.dicio.com.br/plural-de-florzinha/"],
+cafe:["Concursos no Brasil — «cafezinho» sem acento","https://concursosnobrasil.com/artigo/a-palavra-que-nao-leva-acento-mas-muita-gente-insiste-em-colocar/"],
+priberam:["Dicionário Priberam — trenzinho","https://dicionario.priberam.org/trenzinho"],
+ie_dim:["InfoEscola — Diminutivo dos substantivos","https://www.infoescola.com/portugues/diminutivo-dos-substantivos/"],
+ie_aum:["InfoEscola — Aumentativo dos substantivos","https://www.infoescola.com/portugues/aumentativo-dos-substantivos/"],
+sus:["Ministério da Saúde (gov.br) — SUS","https://www.gov.br/saude/sus"],
+ubs_sp:["Prefeitura de São Paulo — UBS: saiba quando procurar","https://prefeitura.sp.gov.br/web/saude/w/ubs-saiba-quando-procurar-este-servi%C3%A7o-na-rede-municipal-3"],
+upa_sp:["Prefeitura de São Paulo — UPA: saiba quando procurar","https://prefeitura.sp.gov.br/web/saude/w/upa-saiba-quando-procurar-este-servi%C3%A7o-na-rede-municipal-1"],
+conass:["CONASS — UBS, UPA, hospital ou SAMU?","https://www.conass.org.br/ubs-upa-hospital-ou-samu-voce-sabe-onde-buscar-atendimento-no-sus/"],
+samu:["Prefeitura de Jundiaí — SAMU, telefone 192","https://jundiai.sp.gov.br/saude/assistencia-hospitalar-e-urgencia-e-emergencia/servico-de-atendimento-movel-de-urgencia-samu-telefone-192/"],
+cns:["SESA-ES (wiki) — Cartão Nacional de Saúde","https://app.wiki.saude.es.gov.br/pt-br/cadweb"],
+cns2:["Serasa — Cartão SUS","https://www.serasa.com.br/blog/cartao-sus/"],
+farm:["Politize! — Farmácia Popular","https://www.politize.com.br/farmacia-popular/"],
+crase_tm:["Toda Matéria — Crase antes de horas","https://www.todamateria.com.br/crase-antes-de-horas/"],
+crase_dicio:["Dicio — Crase antes de horas","https://www.dicio.com.br/crase-antes-de-horas-quando-usar"],
+uol_sexta:["UOL Educação — Plural de sexta-feira (09/10/2026)","https://educacao.uol.com.br/noticias/2026/10/09/plural-de-sexta-feira-e-sextas-feiras-veja-como-escrever-dias-da-semana.ghtm"],
+dicio_seg:["Dicio — Plural de segunda-feira","https://www.dicio.com.br/plural-de-segunda-feira/"],
+ie_b19:["InfoEscola — Acordo Ortográfico, Base XIX (minúsculas e maiúsculas)","https://www.infoescola.com/acordo-ortografico/base-xix-minuscula-e-maiuscula"],
+tm_maius:["Toda Matéria — Letras maiúsculas e minúsculas","https://www.todamateria.com.br/letras-maiusculas-e-minusculas-quando-usar/"],
+uol_mao:["UOL Educação — Mão de obra ou mão-de-obra (13/10/2026)","https://educacao.uol.com.br/noticias/2026/10/13/mao-de-obra-ou-mao-de-obra-qual-e-o-certo-veja-como-escrever.ghtm"],
+dicio_mao:["Dicio — Mão de obra ou mão-de-obra?","https://www.dicio.com.br/mao-de-obra-ou-mao-de-obra/"],
+dicio_mao2:["Dicio — verbete «mão de obra» (plural: mãos de obra)","https://www.dicio.com.br/mao-de-obra/"],
+ie_b15:["InfoEscola — Acordo Ortográfico, Base XV (hífen em locuções)","https://www.infoescola.com/acordo-ortografico/base-xv-hifen-em-compostos-locucoes-e-encadeamentos-vocabulares/"]
+};
+
+/* =================== THEORY =================== */
+function conjTable(head,rows){return"<div class='tbl'><table class='mini'><thead><tr>"+head.map(function(h){return"<th>"+h+"</th>"}).join("")+"</tr></thead><tbody>"+rows.map(function(r){return"<tr>"+r.map(function(c,i){return i?"<td class='v'>"+c+"</td>":"<td>"+c+"</td>"}).join("")+"</tr>"}).join("")+"</tbody></table></div>"}
+var THEORY=[
+{id:"pres",title:"Presente do indicativo",
+ intro:{pt:"Usamos o presente para ações no momento da fala, hábitos, verdades e características. Ele também pode indicar um futuro próximo.",en:"The present is used for actions happening now, habits, general truths and characteristics. It can also refer to the near future.",fr:"Le présent sert pour les actions en cours, les habitudes, les vérités générales et les caractéristiques. Il peut aussi exprimer un futur proche.",es:"El presente se usa para acciones en el momento de hablar, hábitos, verdades y características. También puede indicar un futuro próximo.",ru:"Настоящее время описывает действия в момент речи, привычки, общие истины и характеристики. Оно может обозначать и ближайшее будущее."},
+ body:function(){return conjTable(["","falar","beber","dividir"],[["eu","falo","bebo","divido"],["tu","falas","bebes","divides"],["ele / você","fala","bebe","divide"],["nós","falamos","bebemos","dividimos"],["vós","falais","bebeis","dividis"],["eles / vocês","falam","bebem","dividem"]])+
+  "<p class='kicker'>Irregulares do curso</p>"+conjTable(["","fazer","ser","ter","dormir","ler","dizer","sair"],[["eu","faço","sou","tenho","durmo","leio","digo","saio"],["ele / você","faz","é","tem","dorme","lê","diz","sai"],["nós","fazemos","somos","temos","dormimos","lemos","dizemos","saímos"],["eles / vocês","fazem","são","têm","dormem","leem","dizem","saem"]])+
+  "<p><b>Marcadores:</b> <span class='pt'>sempre, todos os dias, normalmente, atualmente, hoje, todo fim de semana</span>.</p><p class='ex'>Eu sempre falo a verdade para os meus amigos. · Atualmente, eu faço exercícios de manhã.</p>"},
+ course:["Tabela_Conjugacao_Verbos_Destaque.pdf","Exercicio_Conjugacao_Verbos.pdf"],ext:["tm_pres"]},
+{id:"fut",title:"Futuro com ir + infinitivo",
+ intro:{pt:"Formamos o futuro próximo com o verbo ir no presente (vou, vai, vamos, vão) mais o infinitivo. No Brasil, é a forma de futuro mais usada na fala do dia a dia; o futuro simples (falarei) aparece mais em textos formais.",en:"The near future is ir in the present (vou, vai, vamos, vão) plus the infinitive. In Brazil it is the most common future in everyday speech; the simple future (falarei) appears mostly in formal writing.",fr:"Le futur proche se forme avec ir au présent (vou, vai, vamos, vão) + infinitif. Au Brésil, c'est le futur le plus courant à l'oral ; le futur simple (falarei) apparaît surtout à l'écrit formel.",es:"El futuro próximo se forma con ir en presente (vou, vai, vamos, vão) + infinitivo. En Brasil es el futuro más usado en el habla diaria; el futuro simple (falarei) aparece sobre todo en textos formales.",ru:"Ближайшее будущее: глагол ir в настоящем (vou, vai, vamos, vão) + инфинитив. В Бразилии это самая частая форма будущего в разговоре; простое будущее (falarei) встречается в основном в формальных текстах."},
+ body:function(){return conjTable(["","ir (presente)","+ infinitivo"],[["eu","vou","fazer"],["ele / você","vai","assistir"],["nós","vamos","viajar"],["eles / vocês","vão","comer"]])+"<p><b>Marcadores:</b> <span class='pt'>amanhã, amanhã à noite, no próximo fim de semana, mês que vem, no ano que vem, nas próximas férias, no semestre que vem</span>.</p><p class='ex'>No próximo fim de semana, nós vamos viajar para Maceió. · O que vocês vão fazer nas próximas férias?</p>"},
+ course:["Tabela_Conjugacao_Verbos_Destaque.pdf","Atividade_Projeto_SolNovum_B3.pdf"],ext:["migaku"]},
+{id:"perf",title:"Pretérito perfeito (regulares)",
+ intro:{pt:"Indica uma ação concluída no passado, com começo e fim claros. Marcadores comuns: ontem, na semana passada, no ano passado, em 2022.",en:"Expresses an action completed in the past, with a clear beginning and end. Common markers: ontem, na semana passada, no ano passado, em 2022.",fr:"Exprime une action achevée dans le passé, avec un début et une fin clairs. Marqueurs fréquents : ontem, na semana passada, no ano passado, em 2022.",es:"Expresa una acción terminada en el pasado, con inicio y fin claros. Marcadores frecuentes: ontem, na semana passada, no ano passado, em 2022.",ru:"Законченное действие в прошлом с ясным началом и концом. Типичные маркеры: ontem, na semana passada, no ano passado, em 2022."},
+ body:function(){return conjTable(["","falar","comer","dormir"],[["eu","falei","comi","dormi"],["tu","falaste","comeste","dormiste"],["ele / você","falou","comeu","dormiu"],["nós","falamos","comemos","dormimos"],["vós","falastes","comestes","dormistes"],["eles / vocês","falaram","comeram","dormiram"]])+
+  "<p><b>Atenção:</b> com verbos em -ar, a forma de <i>nós</i> é igual no presente e no perfeito (<span class='pt'>falamos, estudamos, viajamos</span>). O contexto decide: <span class='pt'>Nós estudamos espanhol todas as terças</span> (presente) · <span class='pt'>Ontem nós estudamos muito</span> (perfeito).</p><p class='ex'>Ela comprou um livro novo na semana passada. · Eles chegaram cedo à festa.</p>"},
+ course:["Aula Pretéritos.pdf","Tabela_Conjugacao_Verbos_Destaque.pdf"],ext:["tm_perf","ppedia"]},
+{id:"irr",title:"Pretérito perfeito: verbos irregulares",
+ intro:{pt:"Muitos verbos frequentes são irregulares no perfeito. Os derivados seguem o verbo base: compor e propor como pôr; manter e obter como ter; refazer como fazer.",en:"Many common verbs are irregular in the perfeito. Derived verbs follow their base: compor and propor like pôr; manter and obter like ter; refazer like fazer.",fr:"Beaucoup de verbes fréquents sont irréguliers au perfeito. Les dérivés suivent le verbe de base : compor et propor comme pôr ; manter et obter comme ter ; refazer comme fazer.",es:"Muchos verbos frecuentes son irregulares en el perfeito. Los derivados siguen al verbo base: compor y propor como pôr; manter y obter como ter; refazer como fazer.",ru:"Многие частые глаголы в perfeito неправильные. Производные спрягаются как основа: compor и propor как pôr; manter и obter как ter; refazer как fazer."},
+ body:function(){return"<input class='search' id='irrq' placeholder='"+esc(t("search"))+"' aria-label='"+esc(t("search"))+"'><div class='tbl' id='irrTable'></div>"+
+  "<ul class='clean'><li><b>ser = ir</b> no perfeito: <span class='pt'>fui, foste, foi, fomos, fostes, foram</span>. O contexto decide: <span class='pt'>Eu fui ao mercado</span> (ir) · <span class='pt'>Eu fui um bom aluno</span> (ser).</li><li><b>pôde × pode</b>: <span class='pt'>pôde</span>, com acento circunflexo, é passado; <span class='pt'>pode</span> é presente. O Acordo Ortográfico manteve esse acento.</li></ul>"},
+ after:function(){function r(q){q=bare(q||"");var h="<table class='mini'><thead><tr><th>verbo</th>"+PERS.map(function(p){return"<th>"+p+"</th>"}).join("")+"</tr></thead><tbody>";IRR.forEach(function(v){if(q&&bare(v.inf).indexOf(q)<0&&!v.f.some(function(x){return bare(x).indexOf(q)>=0}))return;var w=findWord(v.inf);h+="<tr><td><b>"+v.inf+"</b>"+(w?"<br><span class='muted' style='font-size:.8rem'>"+esc(gloss(w))+"</span>":"")+"</td>"+v.f.map(function(x){return"<td class='v'>"+x+"</td>"}).join("")+"</tr>"});$("#irrTable").innerHTML=h+"</tbody></table>"}r("");$("#irrq").addEventListener("input",function(e){r(e.target.value)})},
+ course:["Tabela de Verbos Irregulares no Pretérito Perfeito.pdf","Pretéritos - Irregulares.pdf"],ext:["enem"]},
+{id:"imp",title:"Pretérito imperfeito",
+ intro:{pt:"Descreve o passado sem marcar começo e fim: hábitos, estados, descrições e o cenário de uma história. Também indica ações simultâneas, a hora no passado e um plano que não se realizou.",en:"Describes the past without marking a beginning or end: habits, states, descriptions and the background of a story. It also expresses simultaneous actions, clock time in the past, and a plan that did not happen.",fr:"Décrit le passé sans en marquer le début ni la fin : habitudes, états, descriptions et décor d'un récit. Il exprime aussi des actions simultanées, l'heure dans le passé et un projet non réalisé.",es:"Describe el pasado sin marcar inicio ni fin: hábitos, estados, descripciones y el escenario de una historia. También expresa acciones simultáneas, la hora en el pasado y un plan que no se realizó.",ru:"Описывает прошлое без начала и конца: привычки, состояния, описания, фон истории. Также — одновременные действия, время суток в прошлом и несостоявшийся план."},
+ body:function(){return"<div class='tbl'><table class='mini'><thead><tr><th>Uso</th><th>Exemplo</th><th></th></tr></thead><tbody>"+
+  [["Hábito no passado","Todos os dias, ele tomava café antes de sair.","curso"],["Estado contínuo","Minha família morava em uma casa pequena.","curso"],["Descrição","Ela era baixa e magra.","MIT"],["Ações simultâneas","Enquanto Maria lia, Paulo preparava o jantar.","MIT"],["Hora no passado","Eram duas horas da tarde quando Pedro chegou.","MIT"],["Plano não realizado","Ele ia vir mas ficou doente.","MIT"]].map(function(r){return"<tr><td>"+r[0]+"</td><td class='pt'>"+r[1]+"</td><td class='muted' style='font-size:.8rem'>"+r[2]+"</td></tr>"}).join("")+"</tbody></table></div>"+
+  "<p class='kicker'>Regulares</p>"+conjTable(["","falar (-ar)","comer (-er)","partir (-ir)"],[["eu","falava","comia","partia"],["tu","falavas","comias","partias"],["ele / você","falava","comia","partia"],["nós","falávamos","comíamos","partíamos"],["vós","faláveis","comíeis","partíeis"],["eles / vocês","falavam","comiam","partiam"]])+
+  "<p class='kicker'>Só quatro irregulares</p>"+conjTable(["","ser","ter","vir","pôr"],PERS.map(function(p,i){return[p].concat(IMP.map(function(v){return v.f[i]}))}))+
+  "<p class='hint'>O verbo <i>ir</i> aparece à parte no material do MIT: <span class='pt'>eu ia, tu ias, ele ia, nós íamos, eles iam</span>. Nos slides do curso, as formas de <i>vós</i> aparecem sem acento («tinheis», «vinheis»); a grafia padrão é <i>tínheis, vínheis</i>, como <i>comíeis</i>.</p>"},
+ course:["Aula Pretéritos.pdf","Pretéritos - Irregulares.pdf"],ext:["tm_imp","mit"]},
+{id:"asp",title:"Perfeito × Imperfeito",
+ intro:{pt:"O imperfeito monta o cenário; o perfeito traz o fato que interrompe ou se destaca. Pergunte: a ação terminou num momento preciso (perfeito) ou é hábito, estado ou descrição (imperfeito)?",en:"The imperfeito sets the scene; the perfeito brings in the event that interrupts it or stands out. Ask: did the action end at a specific moment (perfeito), or is it a habit, state or description (imperfeito)?",fr:"L'imperfeito plante le décor ; le perfeito introduit l'événement qui l'interrompt ou se détache. Demandez-vous : l'action s'est-elle achevée à un moment précis (perfeito) ou est-ce une habitude, un état, une description (imperfeito) ?",es:"El imperfeito monta el escenario; el perfeito trae el hecho que lo interrumpe o destaca. Pregúntate: ¿la acción terminó en un momento preciso (perfeito) o es un hábito, estado o descripción (imperfeito)?",ru:"Imperfeito задаёт фон, perfeito вводит событие, которое его прерывает или выделяется. Спросите себя: действие закончилось в конкретный момент (perfeito) или это привычка, состояние, описание (imperfeito)?"},
+ body:function(){return"<div class='grid2'><div><p class='kicker'>Perfeito</p><p class='pt'>ontem, na semana passada, no mês passado, em 2022, na terça-feira passada, um dia, certa manhã, de repente</p></div><div><p class='kicker'>Imperfeito</p><p class='pt'>antigamente, naquela época, quando eu era criança, todos os dias, sempre, frequentemente, mensalmente, enquanto</p></div></div>"+
+  "<p class='hint'>Marcadores retirados dos exercícios do curso.</p><p class='ex'>Eu <b>caminhava</b> pela cidade quando de repente <b>encontrei</b> um velho amigo.</p><p class='ex'>Enquanto ela <b>estudava</b> para a prova, o irmão <b>entrou</b> no quarto.</p>"+
+  "<p><b>O sentido decide, não só o marcador.</b> No texto do curso: <span class='pt'>«Durante muitos anos, o Brasil foi uma colônia de Portugal»</span>. Um período longo, mas visto como fechado, vai para o perfeito.</p>"},
+ course:["Aula Pretéritos.pdf","Atividade B3.PDF"],ext:["ppedia","mit"]},
+{id:"dim",title:"Diminutivos",
+ intro:{pt:"O diminutivo indica tamanho pequeno, mas no Brasil serve muito para mostrar carinho, deixar um pedido mais gentil ou dar ênfase.",en:"The diminutive shows small size, but in Brazil it is often used for affection, to make a request more polite, or for emphasis.",fr:"Le diminutif indique la petite taille, mais au Brésil il sert souvent à exprimer l'affection, à rendre une demande plus polie ou à insister.",es:"El diminutivo indica tamaño pequeño, pero en Brasil se usa mucho para mostrar cariño, hacer un pedido más amable o dar énfasis.",ru:"Диминутив обозначает малый размер, но в Бразилии он часто выражает нежность, делает просьбу вежливее или усиливает смысл."},
+ body:function(){return"<div class='tbl'><table class='mini'><thead><tr><th>Regra</th><th>Exemplos</th></tr></thead><tbody>"+
+  [["-inho / -inha: tira-se a vogal final átona","gato → gatinho · bola → bolinha · lobo → lobinho"],["-zinho / -zinha: última sílaba tônica","café → cafezinho · pé → pezinho"],["-zinho: ditongo ou duas vogais no fim","pai → paizinho · boa → boazinha"],["-zinho: som nasal","trem → trenzinho · bom → bonzinho"],["-zinho: terminação -dade","cidade → cidadezinha"],["Se a palavra tem S no radical, mantém o S + -inho","casa → casinha · país → paisinho"],["g e c duros: acrescenta-se u","amigo → amiguinho · manga → manguinha"],["m vira n antes de -zinho","trem → trenzinho · bom → bonzinho"],["A palavra perde o acento gráfico","café → cafezinho · pé → pezinho"],["Plural: plural da palavra sem o -s final + -zinhos/-zinhas","flores → florezinhas · mãos → mãozinhas · balões → balõezinhos"]].map(function(r){return"<tr><td>"+r[0]+"</td><td class='pt'>"+r[1]+"</td></tr>"}).join("")+"</tbody></table></div>"+
+  "<div class='grid2'><div><p class='kicker'>Carinho</p><p class='ex'>Aceita um cafezinho? · Ele é um amigão!</p></div><div><p class='kicker'>Gentileza</p><p class='ex'>Pode esperar um minutinho? · Tenho só uma duvidazinha.</p></div><div><p class='kicker'>Ênfase</p><p class='ex'>Precisamos acordar cedinho amanhã. (cedo → cedinho)</p></div></div>"+
+  "<div class='flag'><b>Grafia nos slides.</b> Nos slides aparecem «cafézinho», «Pézinho» e «tremzinho». A grafia padrão é <i>cafezinho, pezinho, trenzinho</i> (fontes abaixo). Nos exercícios, a resposta esperada é a grafia padrão («tremzinho» também é aceito).</div>"},
+ course:["Aula 1.pptx (slides 3–12)"],ext:["mango","dicio_pai","dicio_pl","cafe","priberam","ie_dim"]},
+{id:"aum",title:"Aumentativos",
+ intro:{pt:"O aumentativo indica tamanho grande, mas também intensidade, admiração ou, às vezes, tom pejorativo. Regra básica: -ão (masculino) e -ona (feminino), com muitas formas irregulares.",en:"The augmentative shows large size, but also intensity, admiration or sometimes a pejorative tone. Basic rule: -ão (masculine) and -ona (feminine), with many irregular forms.",fr:"L'augmentatif indique la grande taille, mais aussi l'intensité, l'admiration ou parfois un ton péjoratif. Règle de base : -ão (masculin) et -ona (féminin), avec de nombreuses formes irrégulières.",es:"El aumentativo indica tamaño grande, pero también intensidad, admiración o, a veces, un tono despectivo. Regla básica: -ão (masculino) y -ona (femenino), con muchas formas irregulares.",ru:"Аугментатив обозначает большой размер, а также интенсивность, восхищение или иногда пренебрежение. Базовое правило: -ão (м. р.) и -ona (ж. р.), много неправильных форм."},
+ body:function(){return"<div class='tbl'><table class='mini'><thead><tr><th>Tipo</th><th>Exemplos</th></tr></thead><tbody>"+
+  [["-ão (curso)","livro → livrão · carro → carrão · amigo → amigão · calor → calorão · médico → médicozão"],["-ona (curso)","mão → mãozona"],["Irregulares (curso)","casa → casarão · chapéu → chapelão · garrafa → garrafão · homem → homenzão"],["Outros sufixos (InfoEscola)","-aço: inchaço · -aça: barcaça · -arra: bocarra · -orra: cabeçorra"],["Analítico: adjetivo","uma casa grande · um cachorro enorme"]].map(function(r){return"<tr><td>"+r[0]+"</td><td class='pt'>"+r[1]+"</td></tr>"}).join("")+"</tbody></table></div>"+
+  "<div class='grid2'><div><p class='kicker'>Exagero e intensidade</p><p class='ex'>Que calorão hoje! · Ele é um médicozão!</p></div><div><p class='kicker'>Pejorativo</p><p class='ex'>narigão, bocarra</p></div></div>"+
+  "<p><b>Cuidado:</b> nem toda palavra em -ão é aumentativo: <span class='pt'>pão, mão, avião</span>.</p>"},
+ course:["Aula 1.pptx (slides 9–12)"],ext:["ie_aum"]},
+{id:"saude",title:"Saúde no Brasil",
+ intro:{pt:"No Brasil, o SUS (Sistema Único de Saúde) garante acesso universal, integral e gratuito aos serviços de saúde. Saber aonde ir economiza tempo: a UBS é a porta de entrada para casos menos graves; a UPA 24h atende urgências; o SAMU (192) atende emergências com risco imediato à vida.",en:"In Brazil, the SUS (Sistema Único de Saúde) guarantees universal, comprehensive and free access to health services. Knowing where to go saves time: the UBS is the entry point for less serious cases; the UPA 24h handles urgent cases; SAMU (192) handles emergencies with an immediate risk to life.",fr:"Au Brésil, le SUS (Sistema Único de Saúde) garantit un accès universel, intégral et gratuit aux services de santé. Savoir où aller fait gagner du temps : l'UBS est la porte d'entrée pour les cas moins graves ; l'UPA 24h prend en charge les urgences ; le SAMU (192) intervient en cas de danger de mort immédiat.",es:"En Brasil, el SUS (Sistema Único de Saúde) garantiza acceso universal, integral y gratuito a los servicios de salud. Saber adónde ir ahorra tiempo: la UBS es la puerta de entrada para casos menos graves; la UPA 24h atiende urgencias; el SAMU (192) atiende emergencias con riesgo inmediato para la vida.",ru:"В Бразилии SUS (Sistema Único de Saúde) гарантирует всеобщий, полный и бесплатный доступ к медицинской помощи. Важно знать, куда идти: UBS — первая точка обращения в нетяжёлых случаях; UPA 24h — неотложная помощь; SAMU (192) — экстренные случаи с прямой угрозой жизни."},
+ body:function(){return"<div class='tbl'><table class='mini'><thead><tr><th>Serviço</th><th>O que é / quando procurar</th></tr></thead><tbody>"+
+  [["UBS — Unidade Básica de Saúde","Porta de entrada do SUS, para casos menos graves: consultas de clínica geral, pediatria e ginecologia, vacinação, exames de sangue, urina e fezes, medicamentos do SUS. Na cidade de São Paulo: de segunda a sexta, das 7h às 19h."],["UPA 24h — Unidade de Pronto Atendimento","Funciona 24 horas, 7 dias por semana. Urgências como febre acima de 39 °C, dor aguda, cortes profundos, fraturas, falta de ar intensa, convulsões. O médico pode manter o paciente em observação ou encaminhá-lo ao hospital."],["Hospital","Internações, cirurgias, exames complexos, terapia intensiva."],["SAMU — telefone 192","Situações graves e emergenciais, com risco imediato à vida."],["Cartão Nacional de Saúde (cartão do SUS)","Documento de identificação do usuário do SUS; liga a pessoa ao seu histórico de atendimentos."],["Farmácia Popular","Programa do Ministério da Saúde com farmácias privadas credenciadas (selo «Aqui tem Farmácia Popular»). Alguns remédios são gratuitos (por exemplo, para diabetes, asma e hipertensão). É preciso levar documento com foto e CPF e uma receita médica válida."]].map(function(r){return"<tr><td><b>"+r[0]+"</b></td><td>"+r[1]+"</td></tr>"}).join("")+"</tbody></table></div>"+
+  "<p class='kicker'>Expressões da aula</p><div class='tbl'><table class='mini'><thead><tr><th>Expressão</th><th>Significado</th><th>Exemplo</th></tr></thead><tbody>"+
+  [["dar entrada (no hospital, na UPA, na UBS)","iniciar o registro de atendimento","Ele deu entrada na UPA com suspeita de dengue."],["passar mal","ter uma indisposição física ou mal-estar repentino","Eu passava mal toda vez que tomava aquele antibiótico."],["medicação de uso contínuo","medicamento tomado diariamente","O médico pediu para que eu suspendesse minha medicação de uso contínuo."],["fazer a triagem","etapa de avaliação inicial de risco em postos de saúde","Enquanto eu fazia a triagem, o enfermeiro mediu minha pressão."],["estar de jejum","ficar sem se alimentar por várias horas, geralmente antes de exames","Eu estava de jejum desde as 22h para fazer o exame de sangue."]].map(function(r){return"<tr><td><b>"+r[0]+"</b></td><td>"+r[1]+"</td><td class='pt'>"+r[2]+"</td></tr>"}).join("")+"</tbody></table></div>"+
+  "<p><b>Gramática na prática:</b> na ficha de triagem da aula, o <b>histórico</b> (o que você fazia e sentia nos últimos dias) vai no <b>imperfeito</b>, e o <b>evento</b> (o que aconteceu quando decidiu ir ao posto) vai no <b>perfeito</b>. Veja o tema «Perfeito × Imperfeito».</p>"+
+  "<div class='flag'><b>Grafia no slide.</b> O slide escreve «desde às 22h». Depois de <i>desde</i> não há crase: o padrão é <i>desde as 22h</i>. Usamos a forma padrão.</div>"},
+ course:["Aula Saúde (1).pdf"],ext:["sus","ubs_sp","upa_sp","conass","samu","cns","cns2","farm","crase_tm","crase_dicio"]},
+{id:"semana",title:"Dias da semana: plural e minúscula",
+ intro:{pt:"De segunda a sexta, o nome do dia é um substantivo composto: numeral + «feira». No plural, os dois elementos variam: sextas-feiras, não «sexta-feiras». Sábado e domingo são palavras simples e só recebem -s. Os dias da semana se escrevem com letra minúscula.",en:"From Monday to Friday, the day's name is a compound noun: a numeral + «feira». In the plural both parts change: sextas-feiras, not «sexta-feiras». Sábado and domingo are simple words and just add -s. Days of the week are written in lowercase.",fr:"Du lundi au vendredi, le nom du jour est un nom composé : numéral + « feira ». Au pluriel, les deux éléments varient : sextas-feiras, et non « sexta-feiras ». Sábado et domingo sont des mots simples et prennent seulement un -s. Les jours de la semaine s'écrivent en minuscule.",es:"De lunes a viernes, el nombre del día es un sustantivo compuesto: numeral + «feira». En plural varían los dos elementos: sextas-feiras, no «sexta-feiras». Sábado y domingo son palabras simples y solo reciben -s. Los días de la semana se escriben con minúscula.",ru:"С понедельника по пятницу название дня — сложное существительное: числительное + «feira». Во множественном числе изменяются обе части: sextas-feiras, а не «sexta-feiras». Sábado и domingo — простые слова, к ним просто добавляется -s. Дни недели пишутся со строчной буквы."},
+ body:function(){return"<div class='tbl'><table class='mini'><thead><tr><th>Singular</th><th>Plural</th></tr></thead><tbody>"+
+  [["segunda-feira","segundas-feiras"],["terça-feira","terças-feiras"],["quarta-feira","quartas-feiras"],["quinta-feira","quintas-feiras"],["sexta-feira","sextas-feiras"],["sábado","sábados"],["domingo","domingos"]].map(function(r){return"<tr><td class='pt'>"+r[0]+"</td><td class='pt'><b>"+r[1]+"</b></td></tr>"}).join("")+"</tbody></table></div>"+
+  "<p><b>Por quê?</b> <i>Segunda, terça…</i> (numeral) e <i>feira</i> (substantivo) são palavras variáveis; num composto assim, as duas vão para o plural.</p>"+
+  "<p class='ex'>uma sexta-feira → duas sextas-feiras · a próxima sexta-feira → as próximas sextas-feiras · toda sexta-feira → todas as sextas-feiras</p>"+
+  "<p><b>Minúscula.</b> O Acordo Ortográfico (Base XIX) manda escrever com minúscula os nomes dos dias, dos meses e das estações do ano.</p>"+
+  "<p class='ex'>A reunião será na próxima sexta-feira. (e não: «Sexta-Feira») · Estas aulas são dadas aos sábados.</p>"},
+ course:["Qual o plural de sexta-feira (UOL Educação, página salva)"],ext:["uol_sexta","dicio_seg","ie_b19","tm_maius"]},
+{id:"hifen",title:"Mão de obra: locuções sem hífen",
+ intro:{pt:"Desde o Acordo Ortográfico, as locuções (grupos de palavras ligados por preposição, como «de») em geral não têm hífen. Por isso o certo hoje é «mão de obra»; a forma «mão-de-obra» aparece em textos anteriores ao Acordo. Plural: mãos de obra.",en:"Since the Spelling Agreement, locutions (word groups joined by a preposition such as «de») generally have no hyphen. So the correct form today is «mão de obra»; «mão-de-obra» appears in texts from before the Agreement. Plural: mãos de obra.",fr:"Depuis l'Accord orthographique, les locutions (groupes de mots reliés par une préposition comme « de ») ne prennent en général pas de trait d'union. On écrit donc aujourd'hui « mão de obra » ; « mão-de-obra » apparaît dans des textes antérieurs à l'Accord. Pluriel : mãos de obra.",es:"Desde el Acuerdo Ortográfico, las locuciones (grupos de palabras unidos por una preposición como «de») en general no llevan guion. Por eso hoy lo correcto es «mão de obra»; «mão-de-obra» aparece en textos anteriores al Acuerdo. Plural: mãos de obra.",ru:"После Орфографического соглашения устойчивые сочетания (слова, связанные предлогом, например «de»), как правило, пишутся без дефиса. Поэтому сейчас правильно «mão de obra», а «mão-de-obra» встречается в текстах до реформы. Множественное число: mãos de obra."},
+ body:function(){return"<div class='grid2'><div><p class='kicker'>Hoje</p><p class='pt'><b>mão de obra</b> · plural: <b>mãos de obra</b></p></div><div><p class='kicker'>Antes do Acordo</p><p class='pt'><s>mão-de-obra</s></p></div></div>"+
+  "<p><b>Significados</b> (Dicio, UOL): 1) o conjunto de trabalhadores necessários para uma obra ou atividade; 2) o trabalho desses profissionais e o seu custo.</p>"+
+  "<p class='ex'>A empresa precisa contratar mão de obra especializada. · O custo da mão de obra aumentou. · O setor enfrenta falta de mão de obra qualificada.</p>"+
+  "<p><b>A regra geral</b> (Acordo Ortográfico, Base XV, item 6): não se usa hífen em locuções. Exemplos da própria Base: <span class='pt'>sala de jantar, fim de semana, cor de vinho, à vontade, depois de amanhã</span>.</p>"+
+  "<p><b>Exceções</b> listadas na Base XV: <span class='pt'>água-de-colônia, arco-da-velha, cor-de-rosa, mais-que-perfeito, pé-de-meia, ao deus-dará, à queima-roupa</span>.</p>"+
+  "<p><b>Dica de estilo</b> (UOL): no plural, muitas vezes é mais natural dizer <span class='pt'>profissionais, trabalhadores</span> ou <span class='pt'>força de trabalho</span>.</p>"},
+ course:["Mão de obra ou mão-de-obra (UOL Educação, página salva)"],ext:["uol_mao","dicio_mao","dicio_mao2","ie_b15"]}
+];
+
+/* =================== EXERCISE DATA =================== */
+// Fill-in item: {s:"…___…", v:[hints], a:[[alts]...], why:"PT", flag:"PT"}
+var EX={
+asp:[
+ {id:"asp1",title:"Exercício 1: Nuances de Sentido",src:"Aula Pretéritos.pdf",course:true,type:"fill",items:[
+  {s:"Na semana passada, eu ___ uma crise alérgica terrível durante o trabalho.",v:["ter"],a:[["tive"]],why:"«Na semana passada»: fato único e concluído → perfeito."},
+  {s:"Nós ___ muito angustiados na sala de espera quando o médico finalmente ___ as notícias.",v:["estar","trazer"],a:[["estávamos"],["trouxe"]],why:"Estado de fundo (imperfeito) interrompido por um fato (perfeito)."},
+  {s:"Quando eu era criança, eu ___ muito no parque, mas no ano passado ___ lá com meus amigos.",v:["brincar","voltar"],a:[["brincava"],["voltei"]],why:"Hábito na infância → imperfeito; «no ano passado», uma vez → perfeito."},
+  {s:"Antigamente, nós ___ em uma casa pequena, mas em 2022 ___ para um apartamento.",v:["morar","mudar"],a:[["morávamos"],["mudamos","nos mudamos"]],why:"«Antigamente»: estado contínuo; «em 2022»: momento preciso."},
+  {s:"Enquanto ela ___ para a prova, o irmão ___ no quarto e começou a conversar.",v:["estudar","entrar"],a:[["estudava"],["entrou"]],why:"«Enquanto»: ação em andamento; a entrada do irmão é o fato."},
+  {s:"Eu ___ pela cidade quando de repente ___ um velho amigo.",v:["caminhar","encontrar"],a:[["caminhava"],["encontrei"]],why:"«De repente» marca o fato que acontece no cenário."},
+  {s:"Quando chegamos ao restaurante, as pessoas já ___, mas nós ainda não ___ nada.",v:["comer","pedir"],a:[["comiam"],["pedimos","tínhamos pedido"]],why:"As pessoas estavam comendo quando chegamos: cenário → imperfeito.",flag:"No segundo espaço, dentro do conteúdo do curso, cabe «pedimos». Fora do curso, o mais natural seria «tínhamos pedido» (mais-que-perfeito composto). Confirme com o professor."},
+  {s:"Ele sempre ___ de ônibus, mas no mês passado ___ um carro.",v:["viajar","comprar"],a:[["viajava"],["comprou"]],why:"«Sempre» no passado: hábito; «no mês passado»: fato."},
+  {s:"Naquela época, eu não ___ de café, mas um dia ___ um cappuccino e gostei.",v:["gostar","experimentar"],a:[["gostava"],["experimentei"]],why:"«Naquela época»: estado; «um dia»: fato único."},
+  {s:"Nós ___ na sala quando o professor ___ e pediu silêncio.",v:["conversar","chegar"],a:[["conversávamos"],["chegou"]],why:"A conversa era o cenário; a chegada do professor é o fato."}]},
+ {id:"asp2",title:"Exercício 2: Múltipla Escolha",src:"Aula Pretéritos.pdf",course:true,type:"mc",items:[
+  {q:"Naquela época, a Sra. Maria ___ consultas mensalmente porque ___ tonturas. Porém, na terça-feira passada, ela ___ uma queda e ___ direto para a emergência.",o:["marcava / sentia / teve / foi","marcou / sentiu / tinha / ia","marcava / teve / sentia / foi","marcou / sentia / teve / ia"],c:0,why:"«Naquela época, mensalmente»: hábito e sintoma prolongado (imperfeito). «Na terça-feira passada»: dois fatos (perfeito)."},
+  {q:"Quando viajávamos pela Europa, nós ___ sempre de trem porque ___ que era a maneira mais prática de conhecer as cidades. No entanto, em Paris, ___ um problema com a nossa reserva e ___ obrigados a procurar outro hotel.",o:["viajávamos / achávamos / tivemos / fomos","viajamos / achávamos / tínhamos / éramos","viajávamos / achamos / tivemos / íamos","viajamos / achávamos / tivemos / éramos"],c:0,why:"«Sempre» e opinião → imperfeito; o caso em Paris → perfeito."},
+  {q:"Na época em que Carlos ___ naquela empresa, ele ___ frequentemente até tarde. Na última semana, porém, o chefe ___ uma reunião inesperada e ___ a equipe inteira para participar.",o:["trabalhou / ficava / marcava / convocava","trabalhava / ficava / marcou / convocou","trabalhava / ficou / marcou / convocava","trabalhou / ficou / marcava / convocou"],c:1,why:"«Na época em que, frequentemente» → imperfeito; «na última semana» → perfeito."},
+  {q:"Quando meus avós ___ no interior, eles ___ uma pequena loja que funcionava todos os dias. Certa manhã, enquanto meu avô ___ o estabelecimento, um cliente ___ e pediu ajuda.",o:["moraram / tiveram / abriu / entrava","moravam / tinham / abriu / entrou","moravam / tiveram / abria / entrou","moraram / tinham / abriu / entrava"],c:1,why:"Discutível: o cenário (moravam, tinham) só está correto em b). Mas depois de «enquanto» o esperado seria «abria», que só aparece em c), junto com o erro «tiveram». Nenhuma opção é perfeita; b) é a melhor. Confirme com o professor."}]},
+ {id:"asp3",title:"Exemplos da aula",src:"Aula Pretéritos.pdf (slides 3–4)",course:true,type:"fill",items:[
+  {s:"Ontem eu ___ ao cinema com meus amigos.",v:["ir"],a:[["fui"]]},
+  {s:"Ela ___ um livro novo na semana passada.",v:["comprar"],a:[["comprou"]]},
+  {s:"Nós ___ para o interior durante as férias.",v:["viajar"],a:[["viajamos"]]},
+  {s:"Eles ___ cedo à festa.",v:["chegar"],a:[["chegaram"]]},
+  {s:"Eu ___ de limpar a casa ontem à noite.",v:["terminar"],a:[["terminei"]]},
+  {s:"Quando eu ___ criança, ___ muito na rua.",v:["ser","brincar"],a:[["era"],["brincava"]]},
+  {s:"Minha família ___ em uma casa pequena.",v:["morar"],a:[["morava"]]},
+  {s:"Todos os dias, ele ___ café antes de sair.",v:["tomar"],a:[["tomava"]]},
+  {s:"Quando ___ juntos, nós ___ muito.",v:["estudar","conversar"],a:[["estudávamos"],["conversávamos"]]},
+  {s:"Antigamente, eu ___ televisão todas as noites.",v:["assistir"],a:[["assistia"]]}]},
+ {id:"asp4",title:"Do texto sobre a Independência",src:"Atividade B3.PDF (respostas = formas do texto original)",course:true,type:"fill",items:[
+  {s:"Durante muitos anos, o Brasil ___ uma colônia de Portugal.",v:["ser"],a:[["foi"]],why:"No texto: perfeito. O período é visto como fechado."},
+  {s:"Em 1808, a família real portuguesa ___ para o Rio de Janeiro.",v:["mudar-se"],a:[["mudou-se","se mudou"]]},
+  {s:"Em 1821, Dom João VI ___ para Portugal, mas seu filho, Dom Pedro, ___ no Brasil.",v:["voltar","permanecer"],a:[["voltou"],["permaneceu"]]},
+  {s:"Portugal ___ recuperar parte do controle que havia perdido.",v:["querer"],a:[["queria"]],why:"Desejo como estado → imperfeito."},
+  {s:"Esses grupos ___ que o Brasil tivesse mais autonomia.",v:["defender"],a:[["defendiam"]]},
+  {s:"Dom Pedro ___ a separação entre Brasil e Portugal em setembro de 1822.",v:["declarar"],a:[["declarou"]]},
+  {s:"A separação também ___ conflitos em diferentes regiões, porque nem todos ___ o novo governo.",v:["provocar","apoiar"],a:[["provocou"],["apoiavam"]]},
+  {s:"A escravidão ___ existindo.",v:["continuar"],a:[["continuou"]]}]},
+ {id:"aspN",title:"Perfeito ou imperfeito?",src:"",course:false,type:"fill",items:[
+  {s:"Quando eu morava no Rio, eu ___ à praia todos os fins de semana.",v:["ir"],a:[["ia"]],why:"Hábito no passado («todos os fins de semana»)."},
+  {s:"Ontem, nós ___ um bolo para a festa.",v:["fazer"],a:[["fizemos"]],why:"«Ontem»: fato concluído."},
+  {s:"Eram oito horas quando o ônibus ___.",v:["chegar"],a:[["chegou"]],why:"Hora no passado (imperfeito «eram») + fato (perfeito)."},
+  {s:"Enquanto eu ___, minha irmã ___ a louça.",v:["cozinhar","lavar"],a:[["cozinhava"],["lavava"]],why:"Duas ações simultâneas → imperfeito nas duas."},
+  {s:"Na semana passada, ela ___ o celular na bolsa e saiu.",v:["pôr"],a:[["pôs"]],why:"Fato único. Atenção ao acento: pôs."},
+  {s:"Quando criança, ele ___ um cachorro chamado Rex.",v:["ter"],a:[["tinha"]],why:"Estado durante a infância."},
+  {s:"Em 2019, eles ___ ao Brasil pela primeira vez.",v:["vir"],a:[["vieram"]],why:"Momento preciso (2019)."},
+  {s:"Antigamente, as pessoas ___ cartas; hoje mandam mensagens.",v:["escrever"],a:[["escreviam"]],why:"«Antigamente»: hábito."},
+  {s:"Eu ___ em casa quando você ligou.",v:["estar"],a:[["estava"]],why:"Cenário interrompido por «você ligou»."},
+  {s:"Ontem à noite, vocês ___ o jogo?",v:["ver"],a:[["viram"]],why:"«Ontem à noite»: fato concluído."},
+  {s:"O dia ___ bonito e o sol ___.",v:["estar","brilhar"],a:[["estava"],["brilhava"]],why:"Descrição do cenário."},
+  {s:"Ela não ___ vir à aula ontem porque estava doente.",v:["poder"],a:[["pôde"]],why:"Passado de poder com acento: pôde."},
+  {s:"Meus pais ___ presentes da viagem no mês passado.",v:["trazer"],a:[["trouxeram"]],why:"«No mês passado»: fato."},
+  {s:"Ele ___ vir à festa, mas ficou doente.",v:["ir"],a:[["ia"]],why:"Plano que não se realizou: ia + infinitivo."}]}
+],
+tempo:[
+ {id:"time1",title:"Conjugação Verbal: 20 frases",src:"Exercicio_Conjugacao_Verbos.pdf",course:true,type:"fill",wide:true,items:[
+  {s:"Ontem, eu ___ um bolo de chocolate delicioso.",v:["fazer"],a:[["fiz"]]},
+  {s:"Amanhã à noite, nós ___ a um filme no cinema.",v:["assistir"],a:[["vamos assistir"]]},
+  {s:"Ela ___ uma pessoa muito paciente com os alunos.",v:["ser"],a:[["é","foi"]],why:"Sem marcador, característica → presente «é».",flag:"«Foi» também é gramatical; aceitamos as duas."},
+  {s:"Na semana passada, vocês ___ muita sorte no sorteio.",v:["ter"],a:[["tiveram"]]},
+  {s:"Eu sempre ___ a verdade para os meus amigos.",v:["falar"],a:[["falo"]]},
+  {s:"No próximo fim de semana, eles ___ em um restaurante diferente.",v:["comer"],a:[["vão comer"]]},
+  {s:"Você ___ até tarde ontem no escritório?",v:["trabalhar"],a:[["trabalhou"]]},
+  {s:"Nós ___ espanhol todas as terças e quintas.",v:["estudar"],a:[["estudamos"]]},
+  {s:"Mês que vem, eu ___ um celular novo.",v:["comprar"],a:[["vou comprar"]]},
+  {s:"As crianças ___ muito mal na noite passada.",v:["dormir"],a:[["dormiram"]]},
+  {s:"Todo fim de semana, ele ___ o jornal da manhã.",v:["ler"],a:[["lê"]]},
+  {s:"Amanhã, nós ___ um relatório completo sobre o projeto.",v:["escrever"],a:[["vamos escrever"]]},
+  {s:"Ontem, o professor ___ que a prova será amanhã.",v:["dizer"],a:[["disse"]]},
+  {s:"Vocês sempre ___ de casa tão cedo?",v:["sair"],a:[["saem"]]},
+  {s:"Nas próximas férias, nós ___ para a praia.",v:["viajar"],a:[["vamos viajar"]]},
+  {s:"Atualmente, eu ___ exercícios de manhã.",v:["fazer"],a:[["faço"]]},
+  {s:"Vocês ___ ao jogo de futebol ontem à noite?",v:["assistir"],a:[["assistiram"]]},
+  {s:"Eu ___ muita pizza na festa de ontem.",v:["comer"],a:[["comi"]]},
+  {s:"No ano que vem, você ___ em um novo departamento.",v:["trabalhar"],a:[["vai trabalhar"]]},
+  {s:"Ele ___ para o exame amanhã à tarde toda.",v:["estudar"],a:[["vai estudar"]],why:"No arquivo está «a tarde», sem crase; o correto é «à tarde»."}]},
+ {id:"time2",title:"Sol Novum, Parte I: Múltipla Escolha",src:"Atividade_Projeto_SolNovum_B3.pdf",course:true,type:"mc",items:[
+  {q:"Todos os dias, eu ___ às 7h, mas ontem eu ___ até mais tarde.",o:["acordo / dormi","acordei / durmo","acordo / durmo","acordei / dormi"],c:0,why:"«Todos os dias» → presente; «ontem» → perfeito."},
+  {q:"No próximo fim de semana, nós ___ para Maceió com nossos amigos.",o:["fomos viajar","vamos viajar","vamos viajamos","fomos viajamos"],c:1,why:"Futuro: ir no presente + infinitivo."},
+  {q:"Ontem à noite, as gatas não ___ a ração porque ___ dormindo profundamente.",o:["comem / estão","comeram / estavam","comeram / estiveram","vão comer / estão"],c:1,why:"Fato (não comeram) + cenário em andamento (estavam dormindo)."},
+  {q:"Hoje a coordenadora ___ feliz porque ___ uma ótima notícia sobre as aulas na semana passada.",o:["esteve / recebe","está / recebe","está / recebeu","esteve / recebeu"],c:2,why:"«Hoje» → está; «na semana passada» → recebeu."}]},
+ {id:"time3",title:"Sol Novum, Parte II: Completar",src:"Atividade_Projeto_SolNovum_B3.pdf",course:true,type:"fill",wide:true,items:[
+  {s:"Atualmente, os alunos de intercâmbio ___ português e no semestre que vem eles ___ no centro da cidade.",v:["estudar","ir + morar"],a:[["estudam"],["vão morar"]]},
+  {s:"Na semana passada, o professor ___ boas garrafas de vinho tinto e ___ um jantar mediterrâneo.",v:["comprar","preparar"],a:[["comprou"],["preparou"]]},
+  {s:"O que vocês ___ nas próximas férias de verão?",v:["ir + fazer"],a:[["vão fazer"]]},
+  {s:"Normalmente, nós ___ café em casa, mas ontem nós ___ a uma cafeteria excelente.",v:["beber","ir"],a:[["bebemos"],["fomos"]]}]},
+ {id:"time4",title:"Sol Novum, Parte III: Correlacionar",src:"Atividade_Projeto_SolNovum_B3.pdf",course:true,type:"match",items:[
+  {left:["Ontem, eu vi um filme brasileiro muito bom...","Amanhã, nós vamos fazer uma festa...","Todos os dias, o João bebe água com gás..."],right:["... porque será o aniversário de um aluno.","... mas hoje ele preferiu beber suco natural.","... que me deixou muito emocionado."],key:[2,3,1]},
+  {left:["No ano passado, nós viajamos...","Hoje eu estou muito cansado...","Normalmente, vou à faculdade de ônibus..."],right:["... porque trabalhei demais ontem no projeto.","... mas amanhã eu vou de metrô.","... e visitamos o belíssimo litoral de Alagoas."],key:[2,3,1]}]},
+ {id:"timeN",title:"Presente, passado ou futuro?",src:"",course:false,type:"fill",wide:true,items:[
+  {s:"Todos os dias eu ___ às 6h.",v:["acordar"],a:[["acordo"]],why:"Hábito no presente."},
+  {s:"Amanhã nós ___ o Museu do Ipiranga.",v:["visitar"],a:[["vamos visitar"]],why:"«Amanhã» → ir + infinitivo."},
+  {s:"No sábado passado, eles ___ fora.",v:["jantar"],a:[["jantaram"]]},
+  {s:"Normalmente, ela ___ de metrô para a USP.",v:["ir"],a:[["vai"]]},
+  {s:"Na próxima semana, eu ___ a prova.",v:["fazer"],a:[["vou fazer"]]},
+  {s:"Ontem, você ___ o texto?",v:["ler"],a:[["leu"]]},
+  {s:"Hoje à noite, nós ___ com os colegas.",v:["sair"],a:[["vamos sair","saímos"]],why:"Futuro próximo; o presente «saímos» também pode indicar futuro próximo."},
+  {s:"Eles sempre ___ tarde.",v:["dormir"],a:[["dormem"]]},
+  {s:"No mês passado, eu ___ um livro de português.",v:["comprar"],a:[["comprei"]]},
+  {s:"Daqui a pouco, o professor ___ as notas.",v:["dizer"],a:[["vai dizer"]]}]}
+],
+irr:[
+ {id:"irrN",title:"Verbos irregulares no perfeito",src:"",course:false,type:"fill",items:[
+  {s:"Ontem eu ___ uma reunião às 9h.",v:["ter"],a:[["tive"]]},
+  {s:"Nós ___ em Salvador no ano passado.",v:["estar"],a:[["estivemos"]]},
+  {s:"Eles ___ um presente para a professora.",v:["dar"],a:[["deram"]]},
+  {s:"Você ___ a lição de casa ontem?",v:["fazer"],a:[["fez"]]},
+  {s:"Eu ___ um filme ótimo no sábado.",v:["ver"],a:[["vi"]]},
+  {s:"A turma ___ ao museu na sexta-feira passada.",v:["ir"],a:[["foi"]]},
+  {s:"Eu ___ a chave na mesa.",v:["pôr"],a:[["pus"]]},
+  {s:"Ele ___ de ônibus ontem.",v:["vir"],a:[["veio"]]},
+  {s:"Nós ___ a verdade ao professor.",v:["dizer"],a:[["dissemos"]]},
+  {s:"Ela ___ da notícia ontem à noite.",v:["saber"],a:[["soube"]]},
+  {s:"Os alunos não ___ fazer a prova no sábado.",v:["querer"],a:[["quiseram"]]},
+  {s:"Eu ___ um ótimo resultado no exame.",v:["obter"],a:[["obtive"]]},
+  {s:"Vocês ___ as malas no carro?",v:["pôr"],a:[["puseram"]]},
+  {s:"Ontem ___ uma festa na faculdade.",v:["haver"],a:[["houve"]],why:"Haver = existir: só na 3ª pessoa do singular."}]}
+],
+dim:[
+ {id:"dim1",title:"Forme o diminutivo",src:"Aula 1.pptx",course:true,type:"fill",items:[
+  {s:"gato → ___",a:[["gatinho"]]},{s:"casa → ___",a:[["casinha"]],why:"S no radical: casinha."},{s:"bola → ___",a:[["bolinha"]]},{s:"lobo → ___",a:[["lobinho"]]},{s:"filho → ___",a:[["filhinho"]]},{s:"bala → ___",a:[["balinha"]]},{s:"minuto → ___",a:[["minutinho"]]},
+  {s:"amigo → ___",a:[["amiguinho"]],why:"g → gu para manter o som."},{s:"café → ___",a:[["cafezinho"]],why:"Sílaba tônica final → -zinho; perde o acento."},{s:"trem → ___",a:[["trenzinho","tremzinho"]],why:"m → n antes de -zinho: trenzinho (o slide escreve «tremzinho»)."},
+  {s:"cidade → ___",a:[["cidadezinha"]]},{s:"boa → ___",a:[["boazinha"]]},{s:"país → ___",a:[["paisinho"]]},{s:"pai → ___",a:[["paizinho","painho"]]},{s:"favor → ___",a:[["favorzinho"]]},{s:"dúvida → ___",a:[["duvidazinha"]]}]},
+ {id:"dim2",title:"Forme o aumentativo",src:"Aula 1.pptx",course:true,type:"fill",items:[
+  {s:"livro → ___",a:[["livrão"]]},{s:"amigo → ___",a:[["amigão"]]},{s:"calor → ___",a:[["calorão"]]},{s:"médico → ___",a:[["médicozão"]]},{s:"casa → ___",a:[["casarão"]],why:"Irregular."},{s:"bola → ___",a:[["bolão"]]},{s:"gato → ___",a:[["gatão"]]},{s:"lobo → ___",a:[["lobão"]]},
+  {s:"carro → ___",a:[["carrão"]]},{s:"chapéu → ___",a:[["chapelão"]],why:"Irregular."},{s:"garrafa → ___",a:[["garrafão"]],why:"Feminino, mas -ão: irregular."},{s:"mão → ___",a:[["mãozona"]]},{s:"homem → ___",a:[["homenzão"]]},{s:"minuto → ___",a:[["minutão"]]},{s:"café → ___",a:[["cafezão"]]},{s:"favor → ___",a:[["favorzão"]]}]},
+ {id:"dim3",title:"Diminutivo, aumentativo ou palavra normal?",src:"Aula 1.pptx (slide 12)",course:true,type:"mc",items:[["Filhinho",0],["Chapelão",1],["Carrão",1],["Pão",2,"Pão é uma palavra normal; aqui -ão não é aumentativo."],["Gatinho",0],["Garrafão",1],["Mãozona",1],["Pezinho",0],["Copo",2],["Homenzão",1]].map(function(x){return{q:x[0],o:["diminutivo","aumentativo","palavra normal"],c:x[1],why:x[2]||""}})},
+ {id:"dim4",title:"Para que serve a forma?",src:"Aula 1.pptx (slide 4)",course:true,type:"mc",items:[["«Aceita um cafezinho?»",0],["«Ele é um amigão!»",0],["«Pode esperar um minutinho?»",1],["«Tenho só uma duvidazinha.»",1],["«Que calorão hoje!»",2],["«Ele é um médicozão!»",2]].map(function(x){return{q:x[0],o:["Afeto & Carinho","Educação & Polidez","Exagero & Intensidade"],c:x[1]}})},
+ {id:"dimN",title:"Grafia e plural dos diminutivos",src:"",course:false,type:"fill",items:[
+  {s:"pé → ___",a:[["pezinho"]],why:"Perde o acento gráfico."},{s:"bom → ___",a:[["bonzinho"]],why:"m → n."},{s:"manga → ___",a:[["manguinha"]],why:"g → gu."},{s:"cedo → ___",a:[["cedinho"]],why:"Advérbios também têm diminutivo."},{s:"chapéu → ___",a:[["chapeuzinho"]],why:"Perde o acento."},
+  {s:"flores → ___",a:[["florezinhas"]],why:"flore(s) + -zinhas."},{s:"mãos → ___",a:[["mãozinhas"]],why:"mão(s) + -zinhas."},{s:"balões → ___",a:[["balõezinhos"]],why:"balõe(s) + -zinhos."}]}
+],
+saude:[
+ {id:"sau1",title:"Questões de Verdadeiro ou Falso",src:"Aula Saúde (1).pdf",course:true,type:"mc",items:[
+  ["Elena faltou ao trabalho logo nos primeiros dias em que sentiu tonturas.",1,"Falso: «como era uma trabalhadora dedicada, queria ir trabalhar a qualquer custo»."],
+  ["O atendimento na triagem foi rápido porque Elena trouxe seus documentos e o cartão do SUS.",0,"Verdadeiro: «o que agilizou tudo quando deu entrada na triagem»."],
+  ["Elena foi encaminhada com urgência ao médico porque teve um pico de febre na sala de espera.",0,"Verdadeiro."],
+  ["O médico diagnosticou Elena com enxaqueca crônica e lhe deu cinco dias de atestado.",1,"Falso: «disse que era uma virose severa e lhe deu dois dias de atestado»."],
+  ["Elena não conseguiu pegar os remédios na UBS e teve que ir a uma farmácia paga.",1,"Falso: «esteve na farmácia do posto, recebeu os remédios»."],
+  ["No final do dia, o remédio já fazia efeito e Elena soube que estava fora de perigo.",0,"Verdadeiro."]].map(function(x){return{q:x[0],o:["Verdadeiro","Falso"],c:x[1],why:x[2]}})},
+ {id:"sau2",title:"O dia de Elena: perfeito ou imperfeito?",src:"Aula Saúde (1).pdf (respostas = formas do texto original)",course:true,type:"fill",items:[
+  {s:"Há dias Elena ___ que algo estava errado: ___ tonturas frequentes e estava exausta.",v:["sentir","ter"],a:[["sentia"],["tinha"]],why:"Sintomas prolongados no passado → imperfeito."},
+  {s:"Como ___ uma trabalhadora dedicada, ___ ir trabalhar a qualquer custo.",v:["ser","querer"],a:[["era"],["queria"]],why:"Característica e desejo → imperfeito."},
+  {s:"Ontem de manhã ela ___ com uma enxaqueca insuportável e não ___ nem sair da cama.",v:["acordar","poder"],a:[["acordou"],["pôde"]],why:"«Ontem de manhã»: fatos → perfeito. Pôde com acento."},
+  {s:"Sem alternativa, Elena ___ forças e ___ direto para a UBS do bairro.",v:["reunir","ir"],a:[["reuniu"],["foi"]]},
+  {s:"Ao chegar, a recepção ___ lotada e o barulho ___ sua dor.",v:["estar","aumentar"],a:[["estava"],["aumentava"]],why:"Descrição do cenário → imperfeito."},
+  {s:"Para sua sorte, ela ___ os documentos e o cartão do SUS.",v:["trazer"],a:[["trouxe"]]},
+  {s:"O enfermeiro ___ sua pressão e ___ algumas perguntas.",v:["medir","fazer"],a:[["mediu"],["fez"]]},
+  {s:"Ao ver que ela ___ um pico de febre na sala de espera, a encaminhou com urgência para o consultório.",v:["ter"],a:[["teve"]],why:"Um fato pontual → perfeito."},
+  {s:"O médico ___ que era uma virose severa e lhe ___ dois dias de atestado.",v:["dizer","dar"],a:[["disse"],["deu"]]},
+  {s:"Elena ___ na farmácia do posto, recebeu os remédios e os ___ na bolsa.",v:["estar","pôr"],a:[["esteve"],["pôs"]]},
+  {s:"No final do dia, quando a medicação já ___ efeito, ela ___ que estava fora de perigo.",v:["fazer","saber"],a:[["fazia"],["soube"]],why:"Ação em andamento (fazia) + fato pontual (soube)."}]},
+ {id:"sau3",title:"Expressões da aula",src:"Aula Saúde (1).pdf (exemplos do slide)",course:true,type:"fill",wide:true,items:[
+  {s:"Ele ___ na UPA com suspeita de dengue.",v:["dar entrada, perfeito"],a:[["deu entrada"]]},
+  {s:"Eu ___ toda vez que tomava aquele antibiótico.",v:["passar mal, imperfeito"],a:[["passava mal"]]},
+  {s:"O médico pediu para que eu suspendesse minha medicação de ___.",a:[["uso contínuo"]]},
+  {s:"Enquanto eu ___ a triagem, o enfermeiro mediu minha pressão.",v:["fazer"],a:[["fazia"]]},
+  {s:"Eu estava ___ desde as 22h para fazer o exame de sangue.",a:[["de jejum"]]}]},
+ {id:"sau4",title:"Perguntas sobre o texto",src:"Aula Saúde (1).pdf",course:true,type:"open",intro:"open_intro",items:[
+  {q:"1. Quais sintomas Elena sentia antes de ir à UBS? Por que ela continuou tentando ir trabalhar?",pts:["tinha tonturas frequentes e estava exausta","era uma trabalhadora dedicada e queria ir trabalhar a qualquer custo"]},
+  {q:"2. O que aconteceu quando Elena chegou à UBS? Explique como o enfermeiro percebeu que ela precisava de atendimento urgente.",pts:["a recepção estava lotada e o barulho aumentava a dor; ela temia horas de espera","o enfermeiro mediu a pressão e fez perguntas","viu que ela teve um pico de febre na sala de espera e a encaminhou com urgência para o consultório"]},
+  {q:"3. Quais documentos Elena levou para a UBS? Por que esses documentos foram importantes?",pts:["os documentos e o cartão do SUS","agilizaram tudo quando ela deu entrada na triagem"]},
+  {q:"4. Depois da consulta, Elena recebeu um atestado e medicamentos. Quais cuidados ela tomou em casa e como eles contribuíram para sua recuperação?",pts:["recebeu dois dias de atestado para repousar","tomou a primeira dose e descansou","no final do dia a medicação já fazia efeito e ela soube que estava fora de perigo"]}]},
+ {id:"sau5",title:"Ficha de triagem – UPA 24h",src:"Aula Saúde (1).pdf · modelo nosso",course:true,type:"open",intro:"ficha_intro",label:"model",items:[
+  {q:"Histórico recente (o que você FAZIA e SENTIA nos últimos dias) — pretérito imperfeito",pts:["Nos últimos dias eu sentia muita dor de cabeça e tinha febre à noite.","Eu não dormia bem e estava muito cansado."]},
+  {q:"Evento (o que ACONTECEU quando você decidiu vir ao posto) — pretérito perfeito",pts:["Hoje de manhã eu acordei com febre alta e tomei um remédio, mas não melhorei.","Então eu vim à UPA e dei entrada na recepção."]}]},
+ {id:"sauN1",title:"Aonde ir?",src:"",course:false,type:"mc",items:[
+  ["Você precisa tomar uma vacina.",0,"UBS: vacinação para crianças, adolescentes e adultos."],
+  ["São 23h e você está com febre acima de 39 °C.",1,"UPA 24h: urgências como febre alta; funciona 24 horas."],
+  ["Uma pessoa desmaiou na rua e há risco imediato à vida.",2,"SAMU (192): situações graves com risco imediato à vida."],
+  ["Você tem uma receita de remédio para hipertensão e quer retirá-lo de graça numa farmácia credenciada.",3,"Farmácia Popular: alguns remédios, como os de hipertensão, são gratuitos."],
+  ["Você quer marcar uma consulta de clínica geral para um problema que não é urgente.",0,"UBS: porta de entrada para casos menos graves."],
+  ["Você caiu e acha que fraturou o braço.",1,"UPA 24h: fraturas estão entre os casos de urgência."]].map(function(x){return{q:x[0],o:["UBS","UPA 24h","SAMU (192)","Farmácia Popular"],c:x[1],why:x[2]}})},
+ {id:"sauN2",title:"Use as expressões",src:"",course:false,type:"fill",wide:true,items:[
+  {s:"Não comi nada desde ontem à noite: estou ___ para o exame.",a:[["de jejum"]]},
+  {s:"Minha avó toma remédio para pressão todos os dias; é uma medicação de ___.",a:[["uso contínuo"]]},
+  {s:"Ontem eu comi camarão e ___ à noite.",v:["passar mal"],a:[["passei mal"]],why:"«Ontem»: fato → perfeito."},
+  {s:"Quando cheguei à UPA, primeiro eu ___ a triagem.",v:["fazer"],a:[["fiz"]]},
+  {s:"O paciente ___ no hospital às 3h da manhã.",v:["dar entrada"],a:[["deu entrada"]]},
+  {s:"Quando eu era criança, eu ___ sempre que andava de ônibus.",v:["passar mal"],a:[["passava mal"]],why:"Hábito no passado → imperfeito."}]}
+],
+semana:[
+ {id:"sem1",title:"Plural dos dias da semana",src:"Qual o plural de sexta-feira (UOL Educação, página salva) · chave nossa",course:true,type:"fill",items:[
+  {s:"uma sexta-feira → duas ___",v:["sexta-feira"],a:[["sextas-feiras"]],why:"Os dois elementos variam: sextas + feiras."},
+  {s:"a próxima sexta-feira → as próximas ___",v:["sexta-feira"],a:[["sextas-feiras"]],why:"Os dois elementos variam."},
+  {s:"toda sexta-feira → todas as ___",v:["sexta-feira"],a:[["sextas-feiras"]],why:"Os dois elementos variam."},
+  {s:"Temos reuniões marcadas para as ___.",v:["segunda-feira"],a:[["segundas-feiras"]],why:"Numeral + feira: segundas-feiras."},
+  {s:"Eu trabalho aos ___ e aos domingos.",v:["sábado"],a:[["sábados"]],why:"Sábado é palavra simples: só acrescenta -s."},
+  {s:"Haverá compromissos em várias ___.",v:["sexta-feira"],a:[["sextas-feiras"]]}]},
+ {id:"sem2",title:"Certo ou errado?",src:"Qual o plural de sexta-feira (UOL Educação, página salva) · chave nossa",course:true,type:"mc",items:[
+  {q:"Qual é o plural de «sexta-feira»?",o:["sexta-feiras","sextas-feira","sextas-feiras","sexta-feira"],c:2,why:"Os dois elementos vão para o plural."},
+  {q:"Qual é o plural de «domingo»?",o:["domingos","domingo-feiras","domingoes","os domingo"],c:0,why:"Palavra simples: só -s."},
+  {q:"Qual frase está escrita corretamente?",o:["A reunião será na próxima Sexta-Feira.","A reunião será na próxima sexta-feira.","A reunião será na próxima Sexta-feira.","A reunião será na próxima sexta-Feira."],c:1,why:"Dias da semana: letra minúscula (Acordo Ortográfico, Base XIX)."},
+  {q:"Por que «sexta-feiras» está errado?",o:["Porque «sexta» também deve ir para o plural.","Porque não se usa hífen.","Porque «feira» não tem plural.","Porque o certo é «sexta-feira» sempre no singular."],c:0,why:"Num composto de duas palavras variáveis, as duas se flexionam."}]},
+ {id:"semN",title:"Dias da semana na prática",src:"",course:false,type:"fill",items:[
+  {s:"Eu tenho aula de português às ___ e às quintas-feiras.",v:["terça-feira"],a:[["terças-feiras"]]},
+  {s:"O mercado do bairro abre todas as ___.",v:["quarta-feira"],a:[["quartas-feiras"]]},
+  {s:"Nos ___ a gente almoça com a família.",v:["domingo"],a:[["domingos"]]},
+  {s:"As ___ são os dias mais cheios no trabalho.",v:["segunda-feira"],a:[["segundas-feiras"]]},
+  {s:"Eu ia ao clube todos os ___ quando era criança.",v:["sábado"],a:[["sábados"]],why:"Sábado: só -s."},
+  {s:"Na semana passada, as aulas de ___ foram canceladas.",v:["quinta-feira"],a:[["quinta-feira"],["quintas-feiras"]],why:"Aqui o singular e o plural são possíveis."}]}
+],
+hifen:[
+ {id:"hif1",title:"Mão de obra: certo ou errado?",src:"Mão de obra ou mão-de-obra (UOL Educação, página salva) · chave nossa",course:true,type:"mc",items:[
+  {q:"Qual é a grafia recomendada hoje?",o:["mão-de-obra","mão de obra","mão-de obra","mãodeobra"],c:1,why:"Depois do Acordo Ortográfico, a locução se escreve sem hífen."},
+  {q:"Por que ainda encontramos «mão-de-obra»?",o:["Porque é a forma do Brasil e «mão de obra» é de Portugal.","Porque aparece em textos publicados antes do Acordo Ortográfico.","Porque as duas formas são recomendadas.","Porque «mão-de-obra» é o plural."],c:1,why:"A grafia com hífen era a de antes da reforma."},
+  {q:"Qual é o plural de «mão de obra»?",o:["mão de obras","mãos de obras","mãos de obra","mão de obra (não muda)"],c:2,why:"A flexão ocorre em «mãos»: mãos de obra."},
+  {q:"Em «O preço do material representa metade do custo, enquanto a mão de obra responde pelo restante», «mão de obra» significa…",o:["os trabalhadores de uma região","o custo do trabalho dos profissionais","uma tarefa muito difícil","as mãos de um operário"],c:1,why:"Aqui a expressão se refere ao custo do trabalho."}]},
+ {id:"hif2",title:"Complete com «mão de obra» ou «mãos de obra»",src:"Mão de obra ou mão-de-obra (UOL Educação, página salva) (frases do texto) · chave nossa",course:true,type:"fill",wide:true,items:[
+  {s:"A empresa precisa contratar ___ especializada.",a:[["mão de obra"]],why:"Singular, sem hífen."},
+  {s:"O custo da ___ aumentou.",a:[["mão de obra"]]},
+  {s:"O setor necessita de ___ especializadas.",a:[["mãos de obra"]],why:"«especializadas» está no plural → mãos de obra."},
+  {s:"Diferentes regiões oferecem ___ com qualificações específicas.",a:[["mãos de obra"]]}]},
+ {id:"hifN",title:"Com ou sem hífen?",src:"Base XV do Acordo Ortográfico",course:false,type:"mc",items:[
+  ["Vamos viajar no ___.",["fim-de-semana","fim de semana"],1,"Locução substantiva: sem hífen (exemplo da Base XV)."],
+  ["A família jantou na ___.",["sala de jantar","sala-de-jantar"],0,"Locução substantiva: sem hífen (exemplo da Base XV)."],
+  ["Ela comprou um vestido ___.",["cor de rosa","cor-de-rosa"],1,"Exceção da Base XV: cor-de-rosa mantém o hífen."],
+  ["O pretérito ___ é um tempo verbal.",["mais que perfeito","mais-que-perfeito"],1,"Exceção da Base XV: mais-que-perfeito mantém o hífen."],
+  ["Fique ___!",["à vontade","à-vontade"],0,"Locução adverbial: sem hífen (exemplo da Base XV)."],
+  ["Ele guardou um ___ para a viagem.",["pé de meia","pé-de-meia"],1,"Exceção da Base XV: pé-de-meia mantém o hífen."]].map(function(x){return{q:x[0],o:x[1],c:x[2],why:x[3]}})}
+]
+};
+var GROUPS=[{id:"conj",name:"Conjugação"},{id:"asp",name:"Perfeito × Imperfeito"},{id:"tempo",name:"Presente, passado ou futuro"},{id:"irr",name:"Verbos irregulares"},{id:"dim",name:"Diminutivos e aumentativos"},{id:"saude",name:"Saúde"},{id:"semana",name:"Dias da semana"},{id:"hifen",name:"Hífen: mão de obra"},{id:"read",name:"Leitura"}];
+
+/* =================== PROGRESS =================== */
+var prog=store.get("prog",{});var known=store.get("known",{});
+var TITLES={};["asp","tempo","irr","dim","saude","semana","hifen"].forEach(function(g){EX[g].forEach(function(b){TITLES[b.id]=b.title})});
+TITLES["drill-irr"]="Conjugação: perfeito irregular";TITLES["drill-imp"]="Conjugação: imperfeito irregular";TITLES["drill-v15"]="Conjugação: 15 verbos";TITLES["drill-impreg"]="Conjugação: imperfeito regular";TITLES.read1="Leitura: compreensão";
+function saveScore(id,r,tot){prog[id]={r:r,t:tot};store.set("prog",prog)}
+
+/* =================== BLOCK RENDERERS =================== */
+function blockHead(b){return"<div class='bhead'><h3>"+esc(b.title)+"</h3><div class='row'>"+(b.course?"<span class='tag course'>"+t("course")+"</span>":"<span class='tag new'>"+t("newt")+"</span>")+"<span class='score' id='sc-"+b.id+"'></span></div></div>"+(b.src?"<p class='src'>"+esc(b.src)+" · "+t("key_ours")+"</p>":"")}
+function fillBlock(box,b){
+  box.innerHTML=blockHead(b);var res={};
+  b.items.forEach(function(it,n){
+    var d=el("div",{class:"item"});var parts=it.s.split("___");var h="<div class='q'><span class='num'>"+(n+1)+"</span>";
+    parts.forEach(function(p,i){h+=esc(p);if(i<parts.length-1)h+="<input class='gap"+(b.wide?" wide":"")+"' autocomplete='off' autocapitalize='off' spellcheck='false' aria-label='"+(i+1)+"'>"+(it.v&&it.v[i]?" <span class='hint'>("+esc(it.v[i])+")</span>":"")});
+    h+="</div><div class='row'><button class='btn ghost' type='button'>"+t("check")+"</button>"+(it.flag?"<span class='tag'>"+t("disputed")+"</span>":"")+"</div><div class='out'></div>";
+    d.innerHTML=h;box.appendChild(d);
+    var ins=[].slice.call(d.querySelectorAll("input"));
+    function run(){var all=true,al=false;ins.forEach(function(inp,i){var r=judge(inp.value,it.a[i]);inp.classList.remove("ok","bad","almost");inp.classList.add(r==="empty"?"bad":r);if(r!=="ok")all=false;if(r==="almost")al=true});
+      var cls=all?"ok":al?"almost":"bad";var ans=it.a.map(function(a){return a[0]}).join(" · ");
+      d.querySelector(".out").innerHTML="<div class='fb "+cls+"'>"+(all?t("correct"):(al?t("almost")+" ":"")+t("answer")+" <b>"+esc(ans)+"</b>")+(it.why?"<span class='why'>"+esc(it.why)+"</span>":"")+(it.flag?"<span class='why'>"+esc(it.flag)+"</span>":"")+"</div>";
+      res[n]=all;var r=0;for(var k in res)if(res[k])r++;$("#sc-"+b.id).innerHTML="<b>"+r+"</b> / "+b.items.length;saveScore(b.id,r,b.items.length)}
+    d.querySelector("button").onclick=run;
+    ins.forEach(function(inp,i){inp.addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();if(i<ins.length-1)ins[i+1].focus();else run()}})});
+  });
+}
+function mcBlock(box,b){
+  box.innerHTML=blockHead(b);var res={};
+  b.items.forEach(function(it,n){
+    var d=el("div",{class:"item"});d.innerHTML="<div class='q'><span class='num'>"+(n+1)+"</span>"+esc(it.q)+"</div>";
+    var o=el("div",{class:"opts"});var out=el("div");
+    it.o.forEach(function(txt,i){var bt=el("button",{class:"opt",type:"button"},"<b>"+"abcd"[i]+")</b> "+esc(txt));bt.onclick=function(){if(n in res)return;res[n]=(i===it.c);[].forEach.call(o.children,function(x,j){if(j===it.c)x.classList.add("ok");else if(j===i)x.classList.add("bad")});
+      out.innerHTML="<div class='fb "+(i===it.c?"ok":"bad")+"'>"+(i===it.c?t("correct"):t("rightopt")+" "+"abcd"[it.c]+")")+(it.why?"<span class='why'>"+esc(it.why)+"</span>":"")+"</div>";
+      var r=0;for(var k in res)if(res[k])r++;$("#sc-"+b.id).innerHTML="<b>"+r+"</b> / "+b.items.length;saveScore(b.id,r,b.items.length)};o.appendChild(bt)});
+    d.appendChild(o);d.appendChild(out);box.appendChild(d)});
+  var rd=el("button",{class:"btn ghost",type:"button",text:t("redo")});rd.onclick=function(){mcBlock(box,b)};box.appendChild(rd);
+}
+function matchBlock(box,b){
+  box.innerHTML=blockHead(b);
+  b.items.forEach(function(st,si){
+    var d=el("div",{class:"item"});var h="<div class='q'><span class='num'>"+(si+1)+"</span>"+t("match")+"</div><ol class='clean' style='list-style:decimal'>"+st.left.map(function(l){return"<li class='pt'>"+esc(l)+"</li>"}).join("")+"</ol>";
+    st.right.forEach(function(r,ri){h+="<div class='row'><select data-ri='"+ri+"' aria-label='nº'><option value=''>?</option><option>1</option><option>2</option><option>3</option></select><span class='pt'>"+esc(r)+"</span></div>"});
+    h+="<div class='row'><button class='btn ghost' type='button'>"+t("check")+"</button></div><div class='out'></div>";d.innerHTML=h;
+    d.querySelector("button").onclick=function(){var ok=true;[].forEach.call(d.querySelectorAll("select"),function(s){if(+s.value!==st.key[+s.dataset.ri])ok=false});
+      d.querySelector(".out").innerHTML="<div class='fb "+(ok?"ok":"bad")+"'>"+(ok?t("correct"):t("match_ans")+st.key.join(" · "))+"</div>"};
+    box.appendChild(d)});
+}
+function openBlock(box,b){box.innerHTML=blockHead(b)+(b.intro?"<p>"+esc(t(b.intro))+"</p>":"")+b.items.map(function(q){return"<details><summary>"+esc(q.q)+"</summary><p class='hint'>"+t(b.label==="model"?"model":"mention")+"</p><ul class='clean pt'>"+q.pts.map(function(x){return"<li>"+esc(x)+"</li>"}).join("")+"</ul></details>"}).join("")}
+function renderBlock(b){var box=el("div",{class:"box"});if(b.type==="fill")fillBlock(box,b);else if(b.type==="mc")mcBlock(box,b);else if(b.type==="open")openBlock(box,b);else matchBlock(box,b);return box}
+
+/* =================== PANELS =================== */
+var TABS=["home","theory","ex","dict","cards","plan"];
+var tab=store.get("tab","home");var exGroup=store.get("exg","conj");var thTopic=store.get("th","pres");
+
+function renderTabs(){var s=$("#tabs");s.innerHTML="";TABS.forEach(function(id){var b=el("button",{role:"tab","aria-selected":String(id===tab),"data-id":id,text:t("nav_"+id),type:"button"});b.onclick=function(){go(id)};s.appendChild(b)})}
+var TRK={home:"inicio",theory:"teoria",ex:"exercicios",dict:"dicionario",cards:"cartoes",plan:"plano"};function track(p){try{if(window.goatcounter&&window.goatcounter.count)window.goatcounter.count({path:p})}catch(e){}}
+function go(id){track("/"+(TRK[id]||id)+(id==="theory"?"/"+thTopic:id==="ex"?"/"+exGroup:""));tab=id;store.set("tab",id);TABS.forEach(function(x){$("#p-"+x).hidden=x!==id});[].forEach.call($("#tabs").children,function(b){b.setAttribute("aria-selected",String(b.dataset.id===id))});render(id);try{history.replaceState(null,"","#"+id)}catch(e){}window.scrollTo(0,0)}
+document.addEventListener("click",function(e){var a=e.target.closest("[data-go]");if(a){e.preventDefault();var p=a.dataset.go.split(":");if(p[1]){if(p[0]==="ex")exGroup=p[1];if(p[0]==="theory")thTopic=p[1]}go(p[0])}});
+function trBox(obj){if(lang==="pt")return"";return"<div class='tr'><span class='eyebrow'>"+t("translation")+"</span>"+esc(obj[lang])+"</div>"}
+
+function renderHome(){
+  var p=$("#p-home");
+  var rows=[["Aula 1.pptx","Aumentativos e diminutivos","theory:dim","ex:dim"],["Aula Pretéritos.pdf","Perfeito × imperfeito, Exercícios 1 e 2","theory:asp","ex:asp"],["Pretéritos - Irregulares.pdf","Irregulares no perfeito e no imperfeito","theory:irr","ex:conj"],["Tabela de Verbos Irregulares no Pretérito Perfeito.pdf","35 verbos irregulares; ser = ir; pôde × pode","theory:irr","ex:irr"],["Tabela_Conjugacao_Verbos_Destaque.pdf","15 verbos: perfeito, presente, futuro com ir","theory:pres","ex:conj"],["Exercicio_Conjugacao_Verbos.pdf","20 frases com marcadores de tempo","theory:fut","ex:tempo"],["Atividade_Projeto_SolNovum_B3.pdf","Revisão: presente, perfeito, futuro próximo","theory:fut","ex:tempo"],["Atividade B3.PDF","Texto «A Independência do Brasil além do quadro»","dict","ex:read"],["Aula Saúde (1).pdf","Saúde no Brasil (SUS, UBS, UPA), expressões, texto sobre Elena, ficha de triagem","theory:saude","ex:saude"],["Qual o plural de sexta-feira (UOL Educação, página salva)","Plural dos dias da semana (sextas-feiras) e uso de minúscula","theory:semana","ex:semana"],["Mão de obra ou mão-de-obra (UOL Educação, página salva)","Locuções sem hífen depois do Acordo; plural mãos de obra","theory:hifen","ex:hifen"]];
+  var h="<div class='lead'><h2>"+t("home_title")+"</h2></div><div class='box tbl' style='padding:0'><table><thead><tr><th>"+t("th_file")+"</th><th>"+t("th_topic")+"</th><th>"+t("th_where")+"</th></tr></thead><tbody>"+
+    rows.map(function(r){return"<tr><td>"+esc(r[0])+"</td><td>"+esc(r[1])+"</td><td><a href='#' data-go='"+r[2]+"'>"+t("nav_"+r[2].split(":")[0])+"</a> · <a href='#' data-go='"+r[3]+"'>"+t("nav_"+r[3].split(":")[0])+"</a></td></tr>"}).join("")+"</tbody></table></div>";
+  h+="<div class='flag'><b>"+t("note_lbl")+"</b> "+esc(t("note"))+"</div>";
+  var keys=Object.keys(prog);var kn=Object.keys(known).length;
+  h+="<div class='grid2'><div class='box'><p class='eyebrow'>"+t("progress")+"</p>"+((keys.length||kn)?"<table class='mini'><tbody>"+keys.map(function(k){return"<tr><td>"+esc(TITLES[k]||k)+"</td><td class='v'>"+prog[k].r+" / "+prog[k].t+"</td></tr>"}).join("")+"<tr><td>"+t("words_known")+"</td><td class='v'>"+kn+" / "+WORDS.length+"</td></tr></tbody></table>":"<p class='muted'>"+t("progress_empty")+"</p>")+"</div>"+
+    "<div class='box'><p class='eyebrow'>"+t("start")+"</p><ol class='clean'><li><a href='#' data-go='theory:asp'>"+esc(t("start1"))+"</a></li><li><a href='#' data-go='ex:conj'>"+esc(t("start2"))+"</a></li><li><a href='#' data-go='ex:asp'>"+esc(t("start3"))+"</a></li><li><a href='#' data-go='cards'>"+esc(t("start4"))+"</a></li></ol></div></div>";
+  p.innerHTML=h;
+}
+
+function renderTheory(){
+  var p=$("#p-theory");var h="<div class='lead'><h2>"+t("nav_theory")+"</h2><p class='muted'>"+esc(t("theory_intro"))+"</p></div><div class='row' id='thChips'></div><div id='thBody'></div>";
+  p.innerHTML=h;
+  THEORY.forEach(function(x){var b=el("button",{class:"chip",type:"button","aria-pressed":String(x.id===thTopic),text:x.title});b.onclick=function(){thTopic=x.id;store.set("th",x.id);renderTheory();track("/teoria/"+x.id)};$("#thChips").appendChild(b)});
+  var x=THEORY.filter(function(y){return y.id===thTopic})[0]||THEORY[0];
+  var src="<div class='src'><span><b>"+t("src_course")+"</b> "+x.course.map(esc).join(" · ")+"</span>"+(x.ext.length?"<span><b>"+t("src_ext")+"</b> "+x.ext.map(function(k){return"<a href='"+EXT[k][1]+"' target='_blank' rel='noopener'>"+esc(EXT[k][0])+"</a>"}).join(" · ")+"</span>":"")+"</div>";
+  $("#thBody").innerHTML="<div class='box'><h3>"+esc(x.title)+"</h3><p>"+esc(x.intro.pt)+"</p>"+trBox(x.intro)+x.body()+src+"</div>";
+  if(x.after)x.after();
+}
+
+/* ---- conjugation drill ---- */
+var SETS=[{id:"irr",name:"Perfeito: 35 irregulares"},{id:"imp",name:"Imperfeito: 4 irregulares"},{id:"v15",name:"15 verbos: perfeito · presente · futuro"},{id:"impreg",name:"Imperfeito regular"}];
+var dS={set:store.get("dset","irr"),tv:store.get("tuvos",false),cur:null,done:false,r:0,n:0};
+function renderDrill(box){
+  box.innerHTML="<p class='muted'>"+esc(t("drill_intro"))+" "+esc(t("ex_intro").split(".").slice(1).join(".").trim())+"</p><div class='row' id='dSets'></div><div class='row'><button class='chip' id='dTv' type='button' aria-pressed='"+dS.tv+"'>"+t("tuvos")+"</button><span class='hint'>"+esc(t("tuvos_hint"))+"</span></div>"+
+   "<div class='drill'><div class='prompt'><span class='verb' id='dVerb'></span><span class='tag' id='dGl'></span></div><div class='row'><span class='tag t' id='dTense'></span><span class='tag t' id='dPers'></span></div><input id='dIn' autocomplete='off' autocapitalize='off' spellcheck='false' aria-label='resposta'><div class='keys' id='dKeys'></div><div class='row'><button class='btn' id='dCheck' type='button'></button><button class='btn ghost' id='dShow' type='button'>"+t("show")+"</button><span class='score' id='dScore'></span></div><div id='dFb'></div><div class='tbl' id='dTbl'></div></div>";
+  SETS.forEach(function(s){var b=el("button",{class:"chip",type:"button","aria-pressed":String(s.id===dS.set),text:s.name});b.onclick=function(){dS.set=s.id;store.set("dset",s.id);dS.r=0;dS.n=0;renderDrill(box)};$("#dSets").appendChild(b)});
+  $("#dTv").onclick=function(){dS.tv=!dS.tv;store.set("tuvos",dS.tv);renderDrill(box)};
+  "á à â ã é ê í ó ô õ ú ç".split(" ").forEach(function(k){var b=el("button",{type:"button",text:k});b.onclick=function(){var i=$("#dIn");var s=i.selectionStart==null?i.value.length:i.selectionStart;i.value=i.value.slice(0,s)+k+i.value.slice(i.selectionEnd==null?s:i.selectionEnd);i.focus();i.setSelectionRange(s+1,s+1)};$("#dKeys").appendChild(b)});
+  $("#dCheck").onclick=function(){dCheck(false)};$("#dShow").onclick=function(){if(!dS.done)dCheck(true)};
+  $("#dIn").addEventListener("keydown",function(e){if(e.key==="Enter"){e.preventDefault();dCheck(false)}});
+  dNext();
+}
+function pick(a){return a[Math.floor(Math.random()*a.length)]}
+function dNext(){
+  var s=dS.set,q,pi=pick(dS.tv?[0,1,2,3,4,5]:[0,2,3,5]);
+  if(s==="irr"){var v=pick(IRR);q={verb:v.inf,tense:"Pretérito perfeito",pers:PERS[pi],ans:[v.f[pi]],head:["perfeito"],rows:PERS.map(function(p,i){return[p,v.f[i]]})}}
+  else if(s==="imp"){var w=pick(IMP);q={verb:w.inf,tense:"Pretérito imperfeito",pers:PERS[pi],ans:[w.f[pi]].concat((w.alt&&w.alt[pi])||[]),head:["imperfeito"],rows:PERS.map(function(p,i){return[p,w.f[i]]})}}
+  else{var u=pick(V15),p4=Math.floor(Math.random()*4);
+    if(s==="v15"){var k=Math.floor(Math.random()*3),key=["pp","pr","fut"][k];q={verb:u.inf,tense:["Pretérito perfeito","Presente","Futuro (ir + infinitivo)"][k],pers:P4[p4],ans:[u[key][p4]],head:["perfeito","presente","futuro"],rows:P4.map(function(p,i){return[p,u.pp[i],u.pr[i],u.fut[i]]})}}
+    else q={verb:u.inf,tense:"Pretérito imperfeito",pers:P4[p4],ans:[u.imp[p4]],head:["imperfeito"],rows:P4.map(function(p,i){return[p,u.imp[i]]})}}
+  dS.cur=q;dS.done=false;var gw=findWord(q.verb);
+  $("#dVerb").textContent=q.verb;$("#dGl").textContent=gw?gloss(gw):"";$("#dGl").hidden=!gw;$("#dTense").textContent=q.tense;$("#dPers").textContent=q.pers;
+  $("#dIn").value="";$("#dFb").innerHTML="";$("#dTbl").innerHTML="";$("#dCheck").textContent=t("check");$("#dScore").innerHTML="<b>"+dS.r+"</b> / "+dS.n+" "+t("hits");
+}
+function dCheck(reveal){
+  if(dS.done){dNext();$("#dIn").focus();return}
+  var q=dS.cur;var r=reveal?"bad":judge($("#dIn").value,q.ans);if(r==="empty")return;
+  dS.done=true;dS.n++;if(r==="ok")dS.r++;
+  $("#dFb").innerHTML="<div class='fb "+r+"'>"+(r==="ok"?t("correct")+" <b>"+q.ans[0]+"</b>":(r==="almost"?t("almost")+" ":"")+t("answer")+" <b>"+q.ans[0]+"</b>")+"</div>";
+  $("#dTbl").innerHTML=conjTable([""].concat(q.head),q.rows);$("#dCheck").textContent=t("next");
+  $("#dScore").innerHTML="<b>"+dS.r+"</b> / "+dS.n+" "+t("hits");saveScore("drill-"+dS.set,dS.r,dS.n);
+}
+
+/* ---- reading ---- */
+var GLK={"margens":"às margens do rio","cercado":"cercado por","quadro":"o quadro","concluída":"concluir","acontecimento":"o acontecimento","complexo":"complexo","colônia":"a colônia","família real":"a família real","fugir":"fugir de","tropas":"as tropas","permaneceu":"permanecer","recuperar":"recuperar","elites":"a elite","vantagens":"a vantagem","conquistadas":"conquistar","autonomia":"a autonomia","conflito":"o conflito","Diante":"diante de","reconheceu":"reconhecer","provocou":"provocar","apoiavam":"apoiar","escravidão":"a escravidão","direitos":"os direitos","marco":"o marco histórico","igualdade":"a igualdade","beneficiou":"beneficiar-se de","ficou de fora":"ficar de fora"};
+var TXT=["Quando pensamos na Independência do Brasil, muitas pessoas imaginam Dom Pedro às [margens] do rio Ipiranga, montado em um cavalo e [cercado] por soldados. Essa cena ficou famosa por causa do [quadro] Independência ou Morte, de Pedro Américo. A pintura, porém, foi [concluída] em 1888, 66 anos depois do [acontecimento]. O processo de independência foi um pouco mais [complexo].","Durante muitos anos, o Brasil foi uma [colônia] de Portugal. Em 1808, a [família real] portuguesa mudou-se para o Rio de Janeiro para [fugir] das [tropas] de Napoleão. Essa mudança aumentou a importância política e econômica do Brasil.","Em 1821, Dom João VI voltou para Portugal, mas seu filho, Dom Pedro, [permaneceu] no Brasil. Portugal queria [recuperar] parte do controle que havia perdido. Parte das [elites] brasileiras, porém, não queria perder a influência política e as [vantagens] econômicas [conquistadas] desde a chegada da família real. Esses grupos defendiam que o Brasil tivesse mais [autonomia] para tomar suas próprias decisões. [Diante] desse [conflito] de interesses, Dom Pedro declarou a separação entre Brasil e Portugal em setembro de 1822. Portugal, no entanto, só [reconheceu] oficialmente a Independência em 1825.","A separação também [provocou] conflitos em diferentes regiões, porque nem todos [apoiavam] o novo governo. Além disso, grande parte da população teve pouca participação nas decisões. A [escravidão] continuou existindo, e mulheres, indígenas, negros e trabalhadores pobres não conquistaram imediatamente mais [direitos].","Por isso, o 7 de setembro é um [marco] importante, mas não conta toda a história. A Independência mudou o governo do país, mas não significou liberdade e [igualdade] para todos. Conhecer diferentes fatos e perspectivas nos ajuda a compreender quem participou desse processo, quem se [beneficiou] dele e quem [ficou de fora]."];
+function renderReading(box){
+  box.innerHTML="";
+  var tx=el("div",{class:"box reading"});tx.innerHTML="<h3>A Independência do Brasil além do quadro</h3><p class='hint'>"+esc(t("read_intro"))+"</p>"+TXT.map(function(p){return"<p>"+esc(p).replace(/\[([^\]]+)\]/g,function(_,w){var g=findWord(GLK[w]);return"<button class='g' type='button'>"+w+"<span class='gl'>"+(g?esc(gloss(g)):"")+"</span></button>"})+"</p>"}).join("")+"<p class='src'>Atividade B3.PDF</p>";
+  tx.addEventListener("click",function(e){var g=e.target.closest(".g");if(g)g.classList.toggle("open")});box.appendChild(tx);
+  var wd=el("div",{class:"box"});wd.innerHTML="<div class='bhead'><h3>Palavras e significados</h3><span class='tag course'>"+t("course")+"</span></div><p>"+esc(t("words_task"))+"</p>"+
+   [["Elite","a elite","Grupo pequeno de pessoas com mais poder, dinheiro ou influência.","Parte das elites brasileiras não queria perder a influência política."],["Complexo","complexo","Que tem muitas partes ou causas; não é simples.","O processo de independência foi um pouco mais complexo."],["Autonomia","a autonomia","Capacidade de tomar as próprias decisões, sem o controle de outros.","Esses grupos defendiam que o Brasil tivesse mais autonomia."],["Conflito","o conflito","Choque de interesses ou de ideias; também luta, briga.","Diante desse conflito de interesses…"],["Marco histórico","o marco histórico","Data ou fato muito importante, que marca a história.","O 7 de setembro é um marco importante, mas não conta toda a história."],["Ficar de fora","ficar de fora","Não participar; não ser incluído; não receber o benefício.","…quem se beneficiou dele e quem ficou de fora."]]
+   .map(function(r){var g=findWord(r[1]);return"<details><summary>"+r[0]+(g?" <span class='muted' style='font-weight:400'>· "+esc(gloss(g))+"</span>":"")+"</summary><p>"+esc(r[2])+"</p><p class='pt muted'>"+t("intext")+" "+esc(r[3])+"</p></details>"}).join("");
+  box.appendChild(wd);
+  box.appendChild(renderBlock({id:"read1",title:"Compreensão do texto",src:"Atividade B3.PDF",course:false,type:"mc",items:[
+   {q:"Quando foi concluída a pintura Independência ou Morte?",o:["Em 1822","Em 1825","Em 1888","Em 1808"],c:2,why:"«A pintura, porém, foi concluída em 1888, 66 anos depois do acontecimento.»"},
+   {q:"Por que a família real portuguesa mudou-se para o Rio de Janeiro?",o:["Para declarar a independência","Para fugir das tropas de Napoleão","Para recuperar o controle do Brasil","Para pintar o quadro"],c:1},
+   {q:"Quem permaneceu no Brasil em 1821?",o:["Dom João VI","Pedro Américo","Napoleão","Dom Pedro"],c:3},
+   {q:"Quando Portugal reconheceu oficialmente a Independência?",o:["Em 1821","Em 1822","Em 1825","Em 1888"],c:2},
+   {q:"O que o texto diz sobre a escravidão depois da Independência?",o:["Terminou em 1822","Continuou existindo","Terminou em 1825","O texto não fala sobre isso"],c:1},
+   {q:"Qual é a ideia principal do texto?",o:["O quadro mostra exatamente o que aconteceu","A Independência foi um processo complexo e não trouxe igualdade para todos","Portugal nunca reconheceu a Independência","Dom Pedro voltou para Portugal em 1821"],c:1}]}));
+  var op=el("div",{class:"box"});op.innerHTML="<div class='bhead'><h3>Perguntas de interpretação</h3><span class='tag course'>"+t("course")+"</span></div><p>"+esc(t("open_intro"))+"</p>"+
+   [["1. O que aconteceu com a família real portuguesa em 1808 e como isso afetou o Brasil?",["mudou-se para o Rio de Janeiro","para fugir das tropas de Napoleão","aumentou a importância política e econômica do Brasil"]],["2. Por que Portugal e parte das elites brasileiras queriam coisas diferentes?",["Portugal queria recuperar o controle que havia perdido","as elites não queriam perder a influência política e as vantagens econômicas","as elites defendiam mais autonomia para o Brasil"]],["3. Por que o texto afirma que o dia 7 de setembro é importante, mas não conta toda a história? Dê um exemplo.",["é um marco: mudou o governo do país","mas não significou liberdade e igualdade para todos","exemplos: a escravidão continuou; grande parte da população teve pouca participação; Portugal só reconheceu a Independência em 1825; houve conflitos em diferentes regiões"]]]
+   .map(function(q){return"<details><summary>"+esc(q[0])+"</summary><p class='hint'>"+t("mention")+"</p><ul class='clean pt'>"+q[1].map(function(x){return"<li>"+esc(x)+"</li>"}).join("")+"</ul></details>"}).join("");
+  box.appendChild(op);
+}
+
+function renderEx(){
+  var p=$("#p-ex");p.innerHTML="<div class='lead'><h2>"+t("nav_ex")+"</h2><p class='muted'>"+esc(t("ex_intro"))+"</p></div><div class='row' id='exChips'></div><div id='exBody' style='display:grid;gap:18px'></div>";
+  GROUPS.forEach(function(g){var b=el("button",{class:"chip",type:"button","aria-pressed":String(g.id===exGroup),text:g.name});b.onclick=function(){exGroup=g.id;store.set("exg",g.id);renderEx();track("/exercicios/"+g.id)};$("#exChips").appendChild(b)});
+  var body=$("#exBody");
+  if(exGroup==="conj"){var d=el("div",{style:"display:grid;gap:14px"});body.appendChild(d);renderDrill(d)}
+  else if(exGroup==="read")renderReading(body);
+  else EX[exGroup].forEach(function(b){body.appendChild(renderBlock(b))});
+}
+
+/* ---- dictionary ---- */
+var dCat=store.get("dcat","all");var dQ="";
+function renderDict(){
+  var p=$("#p-dict");p.innerHTML="<div class='lead'><h2>"+t("nav_dict")+"</h2><p class='muted'>"+esc(t("dict_intro"))+" "+esc(t("tr_ours"))+"</p></div><input class='search' id='dq' placeholder='"+esc(t("search"))+"' aria-label='"+esc(t("search"))+"' value='"+esc(dQ)+"'><div class='row' id='dCats'></div><div class='box tbl' style='padding:0' id='dTable'></div>";
+  [{id:"all",name:t("all")}].concat(CATS).forEach(function(c){var b=el("button",{class:"chip",type:"button","aria-pressed":String(c.id===dCat)},esc(c.name)+" <small>"+(c.w?c.w.length:WORDS.length)+"</small>");b.onclick=function(){dCat=c.id;store.set("dcat",c.id);renderDict()};$("#dCats").appendChild(b)});
+  $("#dq").addEventListener("input",function(e){dQ=e.target.value;drawDict()});drawDict();
+}
+function drawDict(){
+  var cols=lang==="pt"?["en","fr","es","ru"]:[lang];var q=bare(dQ);
+  var list=WORDS.filter(function(w){if(dCat!=="all"&&w.cat!==dCat)return false;if(!q)return true;return[w.pt,w.en,w.fr,w.es,w.ru].some(function(x){return bare(x).indexOf(q)>=0})});
+  $("#dTable").innerHTML="<table><thead><tr><th>"+t("th_pt")+"</th>"+cols.map(function(c){return"<th>"+LNAME[c]+"</th>"}).join("")+"<th>"+t("th_ex")+"</th></tr></thead><tbody>"+list.map(function(w){return"<tr><td><b>"+esc(w.pt)+"</b></td>"+cols.map(function(c){return"<td>"+esc(w[c])+"</td>"}).join("")+"<td class='pt muted'>"+esc(w.ex)+"</td></tr>"}).join("")+"</tbody></table>";
+}
+
+/* ---- flashcards ---- */
+var cS={cat:store.get("ccat","tempo"),mode:"cards",rev:false,i:0,order:[],qr:0,qn:0};
+function kk(w){return w.cat+"|"+w.pt}
+function cWords(){return cS.cat==="all"?WORDS:WORDS.filter(function(w){return w.cat===cS.cat})}
+function renderCards(){
+  var p=$("#p-cards");p.innerHTML="<div class='lead'><h2>"+t("nav_cards")+"</h2><p class='muted'>"+esc(t("cards_intro"))+"</p></div><div class='row' id='cCats'></div><div class='row'><button class='chip' type='button' id='cmC' aria-pressed='"+(cS.mode==="cards")+"'>"+t("mode_cards")+"</button><button class='chip' type='button' id='cmQ' aria-pressed='"+(cS.mode==="quiz")+"'>"+t("mode_quiz")+"</button><button class='chip' type='button' id='cRev' aria-pressed='"+cS.rev+"'>"+t("reverse")+"</button>"+(lang==="pt"&&cS.mode==="quiz"?"<span class='hint'>"+t("quiz_pt_note")+"</span>":"")+"</div><div id='cArea'></div>";
+  [{id:"all",name:t("all")}].concat(CATS).forEach(function(c){var b=el("button",{class:"chip",type:"button","aria-pressed":String(c.id===cS.cat)},esc(c.name));b.onclick=function(){cS.cat=c.id;store.set("ccat",c.id);startCards()};$("#cCats").appendChild(b)});
+  $("#cmC").onclick=function(){cS.mode="cards";startCards()};$("#cmQ").onclick=function(){cS.mode="quiz";startCards()};$("#cRev").onclick=function(){cS.rev=!cS.rev;startCards()};
+  drawCard();
+}
+function startCards(){var ws=cWords();var un=ws.filter(function(w){return!known[kk(w)]});cS.order=shuffle(un.length?un:ws);cS.i=0;cS.qr=0;cS.qn=0;renderCards()}
+function backHtml(w){if(lang!=="pt")return"<div class='trs'><span>"+esc(w[lang])+"</span></div>";return"<div class='trs'>"+["en","fr","es","ru"].map(function(c){return"<span><b>"+LNAME[c]+"</b>"+esc(w[c])+"</span>"}).join("")+"</div>"}
+function drawCard(){
+  var a=$("#cArea");var ws=cWords();var kn=ws.filter(function(w){return known[kk(w)]}).length;
+  var head="<div class='row' style='justify-content:space-between'><span class='score'>"+t("words_known")+": <b>"+kn+"</b> / "+ws.length+"</span></div><div class='bar'><i style='width:"+Math.round(100*kn/Math.max(1,ws.length))+"%'></i></div>";
+  if(cS.i>=cS.order.length){a.innerHTML=head+"<div class='box' style='margin-top:12px'><p><b>"+t("done")+"</b> "+(cS.mode==="quiz"?cS.qr+" / "+cS.qn:"")+"</p><div class='row'><button class='btn' id='cAgain' type='button'>"+t("again")+"</button></div></div>";$("#cAgain").onclick=startCards;return}
+  var w=cS.order[cS.i];var tl=lang==="pt"?"en":lang;
+  if(cS.mode==="cards"){
+    var front=cS.rev?(lang==="pt"?w.en:w[lang]):w.pt;var back=cS.rev?"<div class='trs'><span>"+esc(w.pt)+"</span></div>":backHtml(w);
+    a.innerHTML=head+"<div class='card' tabindex='0' id='cCard' style='margin-top:12px'><div class='w'>"+esc(front)+"</div><div id='cBack' hidden>"+back+(w.ex?"<div class='exs'>"+esc(w.ex)+"</div>":"")+"</div><div class='hint' id='cTap'>"+t("flip")+"</div></div><div class='row' style='margin-top:12px'><button class='btn ghost' id='cNo' type='button'>"+t("dont")+"</button><button class='btn' id='cYes' type='button'>"+t("know")+"</button><span class='hint'>"+(cS.i+1)+" / "+cS.order.length+"</span></div>";
+    var flip=function(){var b=$("#cBack");b.hidden=!b.hidden;$("#cTap").hidden=!b.hidden};
+    $("#cCard").onclick=flip;$("#cCard").onkeydown=function(e){if(e.key===" "||e.key==="Enter"){e.preventDefault();flip()}};
+    $("#cYes").onclick=function(){known[kk(w)]=1;store.set("known",known);cS.i++;drawCard()};
+    $("#cNo").onclick=function(){delete known[kk(w)];store.set("known",known);cS.i++;drawCard()};
+  }else{
+    var pool=shuffle(shuffle(ws.filter(function(x){return x!==w})).slice(0,3).concat([w]));
+    var fq=cS.rev?w[tl]:w.pt;
+    a.innerHTML=head+"<div class='box' style='margin-top:12px'><div style='font-family:var(--f-display);font-size:1.7rem;font-weight:700'>"+esc(fq)+"</div><div class='opts' id='cOpts'></div><div id='cOut'></div><span class='hint'>"+(cS.i+1)+" / "+cS.order.length+" · "+cS.qr+" "+t("hits")+"</span></div>";
+    pool.forEach(function(x){var b=el("button",{class:"opt",type:"button",text:cS.rev?x.pt:x[tl]});b.onclick=function(){var o=$("#cOpts");if(o.dataset.done)return;o.dataset.done=1;var ok=x===w;cS.qn++;if(ok){cS.qr++;known[kk(w)]=1;store.set("known",known)}
+      b.classList.add(ok?"ok":"bad");if(!ok)[].forEach.call(o.children,function(y,j){if(pool[j]===w)y.classList.add("ok")});
+      var nx=el("button",{class:"btn",type:"button",text:t("next"),style:"margin-top:10px"});nx.onclick=function(){cS.i++;drawCard()};$("#cOut").appendChild(nx);nx.focus()};$("#cOpts").appendChild(b)});
+  }
+}
+
+/* ---- plan ---- */
+var PLAN={
+analysis:{pt:["O bloco gramatical principal até agora são os pretéritos: 35 verbos irregulares no perfeito, 4 no imperfeito e a escolha entre os dois pelo sentido.","A segunda linha é escolher o tempo pelo marcador: presente, perfeito ou futuro com ir.","A Aula 1 traz a formação de diminutivos e aumentativos e o seu uso cultural no Brasil.","Há um texto de leitura (história da Independência) com tarefa de vocabulário.","No slide 2 da Aula 1 os professores perguntam pelas necessidades reais: trabalho, saúde/médico, transporte, burocracia, conversa do dia a dia. A saúde já tem uma aula (Aula Saúde: SUS, UBS, UPA e triagem); trabalho, transporte e burocracia ainda não têm materiais.","Nenhum arquivo traz gabarito; por isso as chaves deste caderno são marcadas como nossas."],
+ en:["The main grammar block so far is the past tenses: 35 irregular verbs in the perfeito, 4 in the imperfeito, and choosing between the two by meaning.","The second strand is choosing the tense from a time marker: present, perfeito or future with ir.","Aula 1 covers forming diminutives and augmentatives and their cultural use in Brazil.","There is one reading text (the history of Independence) with a vocabulary task.","On slide 2 of Aula 1 the teachers ask about real needs: work, health/doctor, transport, bureaucracy, everyday conversation. Health now has a lesson (Aula Saúde: SUS, UBS, UPA and triage); work, transport and bureaucracy have no materials yet.","No file includes an answer key, so the keys here are marked as ours."],
+ fr:["Le principal bloc de grammaire jusqu'ici, ce sont les passés : 35 verbes irréguliers au perfeito, 4 à l'imperfeito, et le choix entre les deux selon le sens.","Deuxième axe : choisir le temps d'après le marqueur — présent, perfeito ou futur avec ir.","L'Aula 1 traite de la formation des diminutifs et augmentatifs et de leur usage culturel au Brésil.","Il y a un texte de lecture (histoire de l'Indépendance) avec une tâche de vocabulaire.","Sur la diapo 2 de l'Aula 1, les professeurs interrogent sur les besoins réels : travail, santé/médecin, transports, démarches administratives, conversation courante. La santé a maintenant une leçon (Aula Saúde : SUS, UBS, UPA et triage) ; travail, transports et démarches n'ont pas encore de supports.","Aucun fichier n'a de corrigé ; les corrigés de ce cahier sont donc indiqués comme les nôtres."],
+ es:["El bloque gramatical principal hasta ahora son los pretéritos: 35 verbos irregulares en el perfeito, 4 en el imperfeito y la elección entre ambos según el sentido.","La segunda línea es elegir el tiempo según el marcador: presente, perfeito o futuro con ir.","La Aula 1 trata la formación de diminutivos y aumentativos y su uso cultural en Brasil.","Hay un texto de lectura (historia de la Independencia) con una tarea de vocabulario.","En la diapositiva 2 de la Aula 1 los profesores preguntan por necesidades reales: trabajo, salud/médico, transporte, burocracia, conversación diaria. La salud ya tiene una clase (Aula Saúde: SUS, UBS, UPA y triaje); trabajo, transporte y burocracia todavía no tienen materiales.","Ningún archivo trae clave de respuestas; por eso las claves de este cuaderno están marcadas como nuestras."],
+ ru:["Главный грамматический блок пока — прошедшие времена: 35 неправильных глаголов в perfeito, 4 в imperfeito и выбор между ними по смыслу.","Вторая линия — выбор времени по маркеру: настоящее, perfeito или будущее с ir.","Aula 1 — образование диминутивов и аугментативов и их культурное употребление в Бразилии.","Есть один текст для чтения (история независимости) с заданием на лексику.","На слайде 2 Aula 1 преподаватели спрашивают о реальных нуждах: работа, здоровье/врач, транспорт, бюрократия, повседневный разговор. По здоровью уже есть урок (Aula Saúde: SUS, UBS, UPA и триаж); по работе, транспорту и бюрократии материалов пока нет.","Ни в одном файле нет ключей, поэтому ключи здесь помечены как наши."]},
+steps:{pt:["Todos os dias, 10 minutos de conjugação: um conjunto por vez.","Uma vez por semana, um relato oral de 1–2 minutos em dupla: «O que eu fiz no fim de semana» (perfeito), «Quando eu era criança…» (imperfeito), «No próximo fim de semana eu vou…» (futuro). O colega anota as trocas de tempo.","Textos curtos de 5–7 frases com cenário no imperfeito e fato no perfeito, no modelo «Eu caminhava pela cidade quando de repente encontrei…». Corrijam uns aos outros usando a Teoria.","Vocabulário próprio sobre os temas do slide 2: saúde, transporte em São Paulo, documentos, trabalho. Os exercícios já trazem palavras de saúde (consulta, sala de espera, tonturas, emergência).","Novos materiais do semestre entram neste caderno com a mesma estrutura: teoria, exercícios com chave, dicionário.","Conferir as chaves marcadas como «discutível» em aula, uma vez."],
+ en:["Every day, 10 minutes of conjugation: one set at a time.","Once a week, a 1–2 minute spoken story in pairs: «O que eu fiz no fim de semana» (perfeito), «Quando eu era criança…» (imperfeito), «No próximo fim de semana eu vou…» (future). Your partner notes tense mix-ups.","Short texts of 5–7 sentences with the background in the imperfeito and the event in the perfeito, on the model «Eu caminhava pela cidade quando de repente encontrei…». Correct each other using the Theory.","Your own vocabulary on the slide 2 topics: health, transport in São Paulo, documents, work. The exercises already contain health words (consulta, sala de espera, tonturas, emergência).","New semester materials go into this notebook with the same structure: theory, exercises with keys, dictionary.","Check the keys marked «debatable» in class, once."],
+ fr:["Chaque jour, 10 minutes de conjugaison : une série à la fois.","Une fois par semaine, un récit oral de 1–2 minutes en binôme : « O que eu fiz no fim de semana » (perfeito), « Quando eu era criança… » (imperfeito), « No próximo fim de semana eu vou… » (futur). Le partenaire note les erreurs de temps.","Textes courts de 5–7 phrases avec le décor à l'imperfeito et l'événement au perfeito, sur le modèle « Eu caminhava pela cidade quando de repente encontrei… ». Corrigez-vous mutuellement avec la Théorie.","Votre propre vocabulaire sur les thèmes de la diapo 2 : santé, transports à São Paulo, documents, travail. Les exercices contiennent déjà du vocabulaire de santé (consulta, sala de espera, tonturas, emergência).","Les nouveaux supports du semestre entreront dans ce cahier avec la même structure : théorie, exercices corrigés, dictionnaire.","Vérifier une fois en cours les corrigés marqués « discutable »."],
+ es:["Todos los días, 10 minutos de conjugación: un conjunto cada vez.","Una vez por semana, un relato oral de 1–2 minutos en parejas: «O que eu fiz no fim de semana» (perfeito), «Quando eu era criança…» (imperfeito), «No próximo fim de semana eu vou…» (futuro). El compañero anota las confusiones de tiempo.","Textos cortos de 5–7 frases con el escenario en imperfeito y el hecho en perfeito, según el modelo «Eu caminhava pela cidade quando de repente encontrei…». Corregíos entre vosotros con la Teoría.","Vocabulario propio sobre los temas de la diapositiva 2: salud, transporte en São Paulo, documentos, trabajo. Los ejercicios ya traen palabras de salud (consulta, sala de espera, tonturas, emergência).","Los nuevos materiales del semestre entrarán en este cuaderno con la misma estructura: teoría, ejercicios con clave, diccionario.","Revisar en clase, una vez, las claves marcadas como «discutible»."],
+ ru:["Каждый день 10 минут спряжения, по одному набору.","Раз в неделю устный рассказ на 1–2 минуты в парах: «O que eu fiz no fim de semana» (perfeito), «Quando eu era criança…» (imperfeito), «No próximo fim de semana eu vou…» (будущее). Партнёр отмечает, где перепутаны времена.","Короткие тексты из 5–7 предложений: фон в imperfeito, событие в perfeito, по модели «Eu caminhava pela cidade quando de repente encontrei…». Проверяйте друг друга по Теории.","Свой словарь по темам слайда 2: здоровье, транспорт в São Paulo, документы, работа. В упражнениях уже есть слова про здоровье (consulta, sala de espera, tonturas, emergência).","Новые материалы семестра добавляются в этот сайт по той же схеме: теория, упражнения с ключами, словарь.","Один раз сверить на занятии ключи с пометкой «спорно»."]},
+h_an:{pt:"O que os materiais mostram",en:"What the materials show",fr:"Ce que montrent les supports",es:"Qué muestran los materiales",ru:"Что видно из материалов"},
+h_st:{pt:"Plano para o semestre",en:"Plan for the semester",fr:"Plan pour le semestre",es:"Plan para el semestre",ru:"План на семестр"},
+h_ref:{pt:"Referências para consulta",en:"Reference resources",fr:"Ressources de référence",es:"Recursos de consulta",ru:"Справочники"}
+};
+function renderPlan(){
+  var p=$("#p-plan");var L=function(o){return o[lang]||o.pt};
+  p.innerHTML="<div class='lead'><h2>"+t("nav_plan")+"</h2><p class='muted'>"+esc(t("plan_intro"))+"</p></div>"+
+   "<div class='box'><h3>"+esc(L(PLAN.h_an))+"</h3><ul class='clean'>"+L(PLAN.analysis).map(function(x){return"<li>"+esc(x)+"</li>"}).join("")+"</ul><p class='hint'>YouTube: <a href='https://www.youtube.com/watch?v=bsutUab2fkI' target='_blank' rel='noopener'>bsutUab2fkI</a> (pasta do curso) · <a href='https://www.youtube.com/watch?v=GO4XbXLcxAY' target='_blank' rel='noopener'>GO4XbXLcxAY</a> (Aula 1, slide 5)</p></div>"+
+   "<div class='box'><h3>"+esc(L(PLAN.h_st))+"</h3><ol class='clean'>"+L(PLAN.steps).map(function(x){return"<li>"+esc(x)+"</li>"}).join("")+"</ol></div>"+
+   "<div class='box'><h3>"+esc(L(PLAN.h_ref))+"</h3><ul class='clean'><li><a href='https://michaelis.uol.com.br/' target='_blank' rel='noopener'>Michaelis</a> — dicionário brasileiro</li><li><a href='https://dicionario.priberam.org/' target='_blank' rel='noopener'>Priberam</a> — dicionário e conjugação</li><li><a href='https://www.academia.org.br/nossa-lingua/busca-no-vocabulario' target='_blank' rel='noopener'>VOLP — Academia Brasileira de Letras</a> — grafia oficial</li></ul></div>";
+}
+
+function render(id){({home:renderHome,theory:renderTheory,ex:renderEx,dict:renderDict,cards:function(){if(!cS.order.length)startCards();else renderCards()},plan:renderPlan})[id]()}
+function applyLang(){
+  document.documentElement.lang=lang==="pt"?"pt-BR":lang;
+  [].forEach.call(document.querySelectorAll("[data-i]"),function(n){n.textContent=t(n.dataset.i)});
+  var ls=$("#langs");ls.innerHTML="";LANGS.forEach(function(c){var b=el("button",{type:"button","aria-pressed":String(c===lang),text:LNAME[c]});b.onclick=function(){lang=c;store.set("lang",c);track("/idioma/"+c);applyLang();renderTabs();render(tab)};ls.appendChild(b)});
+}
+$("#resetAll").onclick=function(){prog={};known={};store.set("prog",{});store.set("known",{});cS.order=[];render(tab)};
+
+var h0=(location.hash||"").slice(1);if(TABS.indexOf(h0)>=0)tab=h0;if(TABS.indexOf(tab)<0)tab="home";
+applyLang();renderTabs();go(tab);var _first="/"+(TRK[tab]||tab)+(tab==="theory"?"/"+thTopic:tab==="ex"?"/"+exGroup:"");(function wait(n){if(window.goatcounter&&window.goatcounter.count){track(_first);track("/idioma/"+lang)}else if(n<50)setTimeout(function(){wait(n+1)},200)})(0);
+})();
+</script>
+
+</body></html>
